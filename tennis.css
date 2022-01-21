@@ -21,7 +21,7 @@ nav {
   background-color: aqua;
   width: 100%;
   display: flex;
-  justify-content: center;  
+  justify-content: center;
 }
 
 nav a {
@@ -37,7 +37,7 @@ nav a:hover {
 h1 {
   display: flex;
   align-items: center;
-  justify-content: center; 
+  justify-content: center;
 }
 
 .container {
@@ -134,7 +134,7 @@ h1 {
 }
 
 .modal {
-  display: none;
+  display: flex;
   position: fixed;
   z-index: 1;
   left: 0;
@@ -142,102 +142,39 @@ h1 {
   width: 100%;
   height: 100%;
   overflow: auto;
-  background-color: rgb(0,0,0);
-  background-color: rgba(0,0,0,0.4);
-  grid-template-columns: 2fr 2fr 2fr 2fr;
-  grid-template-rows: auto;  /*2fr 1fr for others 2fr text and table each*/
-  grid-template-areas: 
-      /* "head head head head" */
-      "body body body body"
-      /* "dob dob pic pic"
-      "nation nation pic pic"
-      "titles titles pic pic"
-      "slams slams pic pic"
-      "first first pic pic"
-      "last last pic pic"
-      "text text text text"
-      "table table table table"; */
+  align-items: center;
+  justify-content: center;
 }
 
-.modal-body {
-  grid-area: body;
-  background: #ffffff;
-  width: 80%;
-  height: 70%;
-  justify-self: center;
-  align-self: center;
-  text-align: center;
-  display: grid;
-  grid-template-columns: 2fr 2fr 2fr 2fr;
-  grid-template-rows: auto;
-  grid-template-areas:
-      "head head head head" 
-      "dob dob pic pic"
-      "nation nation pic pic"
-      "titles titles pic pic"
-      "slams slams pic pic"
-      "first first pic pic"
-      "last last pic pic"
-      "text text text text"
-      "table table table table";;
+.modal-wrapper {
+  width: 50%;
+  max-width: 800px;
 }
 
 .modal-header {
-grid-area: head;
-background: crimson;
-width: 100%;
-margin-top: 0;
-display: flex;
-align-items: center;
-justify-content: center;
+  text-align: center;
+  background: red;
+  padding: 10px 0
 }
 
-.modal-pic {
-  grid-area: pic;
-  height: 250px;
-  width: 75%;
-  /* margin-top: -30px; */
-  margin-left: 30px;
-  object-fit: cover;
+.modal-header h2 {
+  margin: 0;
 }
 
-.modal-data {
-  margin: auto;
+.modal-content {
+  display: flex;
+  background: #fff;
 }
 
-.modal-dob {
-  grid-area: dob;
+
+.modal-content div {
+  width: 50%;
 }
 
-.modal-nation {
-  grid-area: nation;
-}
-
-.modal-titles {
-  grid-area: titles;
-}
-
-.modal-slams {
-  grid-area: slams;
-}
-
-.modal-first {
-  grid-area: first;
-}
-
-.modal-last {
-  grid-area: last;
-}
-
-.modal-text {
-  grid-area: text;
+.modal-footer {
+  background: pink;
 }
 
 .modal-table {
-  grid-area: table;
-}
-
-.modal-close-btn {
-  position: relative;
-  left: 43%;
+  background: green;
 }
