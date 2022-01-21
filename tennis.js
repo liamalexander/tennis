@@ -641,6 +641,8 @@ window.onload = function() {
     // NEW 
     // playerWrapper.classList.add(".modal-open");
 
+    //test git
+
     // playerWrapper.addEventListener("click", function() {
     //   // alert("modal working");
     //   function createModal(modal) {
