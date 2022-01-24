@@ -1,9 +1,7 @@
-//TRY TO DECLARE PLAYERS OUTSIDE THE FUNCTION TO GIVE IT GLOBAL SCOPE
 window.onload = function() {
     const players = [{
       "id": 1,
       "name": "Federer",
-      "firstName" : "Roger",
       "slams": 20,
       "nationality": "Swiss",
       "photo" : "https://pbs.twimg.com/profile_images/378800000606046005/3f05655ac9b76e73eb3e86f9d5d3b2cd.jpeg",
@@ -21,14 +19,13 @@ window.onload = function() {
     {
       "id": 2,
       "name": "Nadal",
-      "firstName" : "Rafael",
       "slams": 20,
       "nationality": "Spanish",
       "photo" : "https://static.wixstatic.com/media/58baea_bdd0df59261642a8858efd670143ea12~mv2.jpg/v1/fill/w_128,h_128,al_c,q_80,usm_0.66_1.00_0.01/Nadal%20Forehand%20Blog.webp",
       "dob" : "03 / 06 / 86",
       "firstSlam": "French Open 2005",
       "lastSlam": "French Open 2020",
-      "titles": 86,
+      "titles": 89,
       "text": "Nadal has won 13 French Open titles, more than any player at any Grand Slam event.",
       "aus": 1,
       "fre": 13,
@@ -39,14 +36,13 @@ window.onload = function() {
     {
       "id": 3,
       "name": "Djokovic",
-      "firstName" : "Novak",
       "slams": 20,
       "nationality": "Serbian",
       "photo" : "https://cdnmd.lavoz.com.ar/sites/default/files/styles/box_128/public/nota_periodistica/nole1_1602102173.jpg",
       "dob" : "22 / 05 / 87",
       "firstSlam": "Australian Open 2008",
       "lastSlam": "Wimbledon 2021",
-      "titles": 81,
+      "titles": 86,
       "text": "Djokovic is the only male player to complete the non-calender year Grand Slam, winning all 4 Slams from Wimbledon 2015 - French Open 2016.",
       "aus": 9,
       "fre": 2,
@@ -57,7 +53,6 @@ window.onload = function() {
     {
       "id": 4,
       "name": "Sampras",
-      "firstName" : "Pete",
       "slams": 14,
       "nationality": "American",
       "photo" : "https://static.wixstatic.com/media/58baea_6824fafaf67e49a28cf5de8645aeced6~mv2.jpg/v1/fill/w_128,h_128,al_c,q_80,usm_0.66_1.00_0.01/Sampras%20Volley.webp",
@@ -75,7 +70,6 @@ window.onload = function() {
     {
       "id": 5,
       "name": "Borg",
-      "firstName" : "Bjorn",
       "slams": 11,
       "nationality": "Swedish",
       "photo" : "https://images.prismic.io/fft-rg-commun-news/d246f93953c7c10fdfe3b5bd195c2eb780b22f0d_1974-1981-annees-bjorn-borg-roland-garros.jpg?auto=compress,format",
@@ -93,7 +87,6 @@ window.onload = function() {
     {
       "id": 6,
       "name": "Connors",
-      "firstName" : "Jimmy",
       "slams": 8,
       "nationality": "American",
       "photo" : "https://pbs.twimg.com/profile_images/313878886/chris-_20jimmy_20connors250x238_reasonably_small.jpg",
@@ -111,7 +104,6 @@ window.onload = function() {
     {
       "id": 7,
       "name": "Lendl",
-      "firstName" : "Ivan",
       "slams": 8,
       "nationality": "Czech / American",
       "photo" : "https://res.cloudinary.com/lptennis/image/upload/c_fill,h_96,q_auto,w_96/v1482781330/wkjjx0hd7jfqu5hz1epa.png",
@@ -129,7 +121,6 @@ window.onload = function() {
     {
       "id": 8,
       "name": "Agassi",
-      "firstName" : "Andre",
       "slams": 8,
       "nationality": "American",
       "photo" : "https://laterradihayk.files.wordpress.com/2016/06/andre-agassi1.jpg?w=256&h=256&crop=1",
@@ -147,7 +138,6 @@ window.onload = function() {
     {
       "id": 9,
       "name": "McEnroe",
-      "firstName" : "John",
       "slams": 7,
       "nationality": "American",
       "photo" : "https://media.gq.com/photos/5583173409f0bee564411591/master/pass/sports-2011-06-wimbeldon-rivalries-wimbeldon-bjorn-borg-john-mcenroe_96.jpg",
@@ -165,7 +155,6 @@ window.onload = function() {
     {
       "id": 10,
       "name": "Wilander",
-      "firstName" : "Mats",
       "slams": 7,
       "nationality": "Swedish",
       "photo" : "https://cdn.cnn.com/cnnnext/dam/assets/150428170726-mats-wilander-french-final-large-169.jpg",
@@ -183,7 +172,6 @@ window.onload = function() {
     {
       "id": 11,
       "name": "S Williams",
-      "firstName" : "Serena",
       "slams": 23,
       "nationality": "American",
       "photo" : "https://cdn.britannica.com/70/149370-050-F2F4BEE5/Serena-Williams-US-Open-2004.jpg",
@@ -201,7 +189,6 @@ window.onload = function() {
     {
       "id": 12,
       "name": "Graf",
-      "firstName" : "Steffi",
       "slams": 22,
       "nationality": "German",
       "photo" : "https://www.larousse.fr/encyclopedie/data/vignettes/1003786-Steffi_Graf.jpg",
@@ -219,7 +206,6 @@ window.onload = function() {
     {
       "id": 13,
       "name": "Evert",
-      "firstName" : "Chris",
       "slams": 18,
       "nationality": "American",
       "photo" : "https://photoresources.wtatennis.com/photo-resources/2020/03/28/44d0dbdc-5568-4eb1-8c43-914630cfd4a2/gettyimages-667510641-594x594.jpg?width=1200&height=630",
@@ -237,7 +223,6 @@ window.onload = function() {
     {
       "id": 14,
       "name": "Navratilova",
-      "firstName" : "Martina",
       "slams": 18,
       "nationality": "Czech / American",
       "photo" : "https://www.tennisworldusa.org/imgb/52642/martina-navratilova-i-am-who-i-am.jpg",
@@ -255,7 +240,6 @@ window.onload = function() {
     {
       "id": 15,
       "name": "Court",
-      "firstName" : "Margaret",
       "slams": 11,
       "nationality": "Australian",
       "photo" : "https://s31242.pcdn.co/wp-content/uploads/2019/06/GettyImages-3309293-1024x701.jpg",
@@ -273,7 +257,6 @@ window.onload = function() {
     {
       "id": 16,
       "name": "Seles",
-      "firstName" : "Monica",
       "slams": 9,
       "nationality": "Yugoslavian / American",
       "photo" : "https://d2me2qg8dfiw8u.cloudfront.net/content/uploads/2021/11/23175821/Monica-Seles-on-the-run.jpg",
@@ -291,7 +274,6 @@ window.onload = function() {
     {
       "id": 17,
       "name": "King",
-      "firstName" : "Billie Jean",
       "slams": 8,
       "nationality": "American",
       "photo" : "https://img.thedailybeast.com/image/upload/dpr_2.0/c_crop,h_413,w_413,x_121,y_0/c_limit,w_128/d_placeholder_euli9k,fl_lossy,q_auto/v1501718211/1378802776786.cached_yghpwm",
@@ -309,7 +291,6 @@ window.onload = function() {
     {
       "id": 18,
       "name": "Goolagong",
-      "firstName" : "Evonne",
       "slams": 7,
       "nationality": "Australian",
       "photo" : "https://cdn.cnn.com/cnnnext/dam/assets/150128093940-evonne-goolagong-wimbledon-playing-super-169.jpg",
@@ -327,7 +308,6 @@ window.onload = function() {
     {
       "id": 19,
       "name": "V Williams",
-      "firstName" : "Venus",
       "slams": 7,
       "nationality": "American",
       "photo" : "https://static.ffx.io/images/$zoom_0.1309317630758573%2C$multiply_0.254%2C$ratio_1%2C$width_378%2C$x_57%2C$y_0/t_crop_custom/q_86%2Cf_auto/cb6f74032d6703dbe16bff5ef2a332ad57f1e232",
@@ -345,7 +325,6 @@ window.onload = function() {
     {
       "id": 20,
       "name": "Henin",
-      "firstName" : "Justine",
       "slams": 7,
       "nationality": "Belgian",
       "photo" : "https://i.guim.co.uk/img/static/sys-images/Sport/Pix/pictures/2006/01/24/Heninsm.jpg?width=300&quality=45&auto=format&fit=max&dpr=2&s=3cb3aec94aa780b82bb146b613cecb26",
@@ -362,14 +341,14 @@ window.onload = function() {
     }
   ];
 
-  // window.onload = function() {
-  //   for (let i = 0; i < players.length; i++) {
-  //     // console.log(players[i].name);
-  //     players[i].addEventListener('click', function() {
-  //       alert(player[i].name);
-  //     })
-  //   };
-  // }
+  window.onload = function() {
+    for (let i = 0; i < players.length; i++) {
+      // console.log(players[i].name);
+      players[i].addEventListener('click', function() {
+        alert(player[i].name);
+      })
+    };
+  }
 
 
   const playerList = document.getElementById("playerList");
@@ -378,188 +357,55 @@ window.onload = function() {
     const playerWrapper = document.createElement("div");
     playerWrapper.classList.add("modalBtn");
     playerWrapper.id = player.id;
-    playerWrapper.addEventListener("click", function (e) {
-      // alert(player.name);
-      const modal = document.querySelector(".modal");
-        // const modalHeader = document.querySelector(".modal-header");
-        const modalBody = document.querySelector(".modal-body");
-
-        modal.style.display = "grid";
-
-        const modalHeader = document.createElement("h2");
-        modalHeader.textContent = player.name;
-        modalHeader.classList.add("modal-header");
-        modalBody.appendChild(modalHeader);
-
-        document.querySelectorAll("#name").innerHTML = player.name;
-
-        const closeModalBtn = document.createElement("p");
-        closeModalBtn.classList.add("modal-close-btn");
-        closeModalBtn.textContent = "x";
-        modalHeader.appendChild(closeModalBtn);
         //CREATE THE OTHER PAGES IN NAV AND LINK THEM, ALLY SAID USE HTML LINKS TO EACH
         //IN VIDEOS TRY TO USE ASYNC TO GET THEM INSTEAD?
-        //TIDY DESIGN, ESPECIALLY MODAL HEADER HEIGHT
+        //TIDY DESIGN
         //MAKE FOOTER STICKY
-        //ADD TABLE TO THE MODAL AND MAKE THE DESIGN BETTER FOR THE DATA
-        //CHANGE THE MODAL TO HTML STRUCTURE AND ADD ONE FUNCTION (ABOVE) TO INSERT THE DATA --
-        //IT'S BETTER THIS WAY AS WE NEED LESS CODE AND NOT PUTTING TOO MUCH INTO HTML EITHER --
-        //IT SHOULD BE A FEW MORE LINES ABOVE
-
-        //CHANGE TENNIS TO PRJOECTS AND ADD PROJECTS FOLDER TO GIT INSTEAD OF DEMO
         //NODE SERVER
 
-        const modalPic = document.createElement("img");
-        modalPic.src = player.modalPhoto;
-        modalPic.classList.add("modal-pic");
-        modalBody.appendChild(modalPic);
+        playerWrapper.addEventListener("click", function (e) {
+          const modal = document.getElementById("modal");
+          const playerName = document.querySelector(".name");
+          const playerDob = document.querySelector(".dob");
+          const playerNation = document.querySelector(".nation");
+          const playerTitles = document.querySelector(".titles");
+          const playerSlams = document.querySelector(".slams");
+          const playerFirst = document.querySelector(".first");
+          const playerLast = document.querySelector(".last");
+          const playerPic = document.querySelector(".modal-pic");
+          const playerText = document.querySelector(".text");
+          const ausWin = document.getElementById("aus1");
+          const freWin = document.getElementById("fre1");
+          const wimWin = document.getElementById("wim1");
+          const usWin = document.getElementById("uso1");
+          const modalCloseBtn = document.querySelector(".modal-close");
 
-        const modalDOB = document.createElement("p");
-        modalDOB.textContent = `Born: ${player.dob}`;
-        modalDOB.classList.add("modal-dob", "modal-data");
-        modalBody.appendChild(modalDOB);
+          modal.style.display = "flex";
+          playerName.textContent = player.name;
+          playerDob.textContent = `Born: ${player.dob}`;
+          playerNation.textContent = `Nationality: ${player.nationality}`;
+          playerTitles.textContent = `Titles: ${player.titles}`;
+          playerSlams.textContent = `Grand Slams: ${player.slams}`;
+          playerFirst.textContent = `First Slam: ${player.firstSlam}`;
+          playerLast.textContent = `Last Slam: ${player.lastSlam}`;
+          playerPic.src = player.modalPhoto;
+          playerText.textContent = player.text;
+          ausWin.textContent = player.aus;
+          freWin.textContent = player.fre;
+          wimWin.textContent = player.wim;
+          usWin.textContent = player.uso;
 
-        const nation = document.createElement("p");
-        nation.textContent = `Nationality: ${player.nationality}`;
-        nation.classList.add("modal-nation", "modal-data");
-        modalBody.appendChild(nation);
+          const closeModal = function (e) {
+              modal.style.display = "none";
+          };
 
-        const titles = document.createElement("p");
-        titles.textContent = `Total Titles: ${player.titles}`;
-        titles.classList.add("modal-titles", "modal-data");
-        modalBody.appendChild(titles);
+          modalCloseBtn.addEventListener("click", closeModal);
+          // modal.addEventListener("click", closeModal);
 
-        const slams = document.createElement("p");
-        slams.textContent = `Grand Slams: ${player.slams}`;
-        slams.classList.add("modal-slams", "modal-data");
-        modalBody.appendChild(slams);
+        }, false)
 
-        const first = document.createElement("p");
-        first.textContent = `First Slam: ${player.firstSlam}`;
-        first.classList.add("modal-first", "modal-data");
-        modalBody.appendChild(first);
-
-        const last = document.createElement("p");
-        last.textContent = `Last Slam: ${player.lastSlam}`;
-        last.classList.add("modal-last", "modal-data");
-        modalBody.appendChild(last);
-
-        const text = document.createElement("p");
-        text.textContent = player.text;
-        text.classList.add("modal-text", "modal-data");
-        modalBody.appendChild(text);
-
-        // closeModalBtn.addEventListener("click", function (e) {
-        //     modal.style.display = "none";
-        //     modalBody.textContent = "";
-        // });
-
-        const closeModal = function(e) {
-          modal.style.display = "none";
-          modalBody.textContent = "";
-        };
-
-        closeModalBtn.addEventListener("click", closeModal);
-        modal.addEventListener("click", closeModal);
-      
-    }, false);
-
-    // playerList.addEventListener("click", function (e) {
-    //   if (e.target.closest("div").classList.contains("modalBtn")) {
-    //     console.log(e.target.id);
-    //   }
-    // })
-
-    // playerList.addEventListener("click", function (e) {
-    //   if (e.target && e.target.classList.contains("modalBtn") && e.target.id == player.id) {
-    //     console.log(player.name);
-    //   }
-    // })
-    // document.querySelector("body").addEventListener("click", function (e) {
-    //   if (e.target.classList.contains("modalBtn") && e.target.id == player.id) {
-    //     console.log(player.name);
-    //     const modal = document.querySelector(".modal");
-    //     // const modalHeader = document.querySelector(".modal-header");
-    //     const modalBody = document.querySelector(".modal-body");
-
-    //     modal.style.display = "grid";
-
-    //     const modalHeader = document.createElement("h2");
-    //     modalHeader.textContent = player.name;
-    //     modalHeader.classList.add("modal-header");
-    //     modalBody.appendChild(modalHeader);
-
-    //     const modalPic = document.createElement("img");
-    //     modalPic.src = player.modalPhoto;
-    //     modalPic.classList.add("modal-pic");
-    //     modalBody.appendChild(modalPic);
-
-    //     const modalDOB = document.createElement("p");
-    //     modalDOB.textContent = `Born: ${player.dob}`;
-    //     modalDOB.classList.add("modal-dob", "modal-data");
-    //     modalBody.appendChild(modalDOB);
-
-    //     const nation = document.createElement("p");
-    //     nation.textContent = `Nationality: ${player.nationality}`;
-    //     nation.classList.add("modal-nation", "modal-data");
-    //     modalBody.appendChild(nation);
-
-    //     const titles = document.createElement("p");
-    //     titles.textContent = `Total Titles: ${player.titles}`;
-    //     titles.classList.add("modal-titles", "modal-data");
-    //     modalBody.appendChild(titles);
-
-    //     const slams = document.createElement("p");
-    //     slams.textContent = `Grand Slams: ${player.slams}`;
-    //     slams.classList.add("modal-slams", "modal-data");
-    //     modalBody.appendChild(slams);
-
-    //     const first = document.createElement("p");
-    //     first.textContent = `First Slam: ${player.firstSlam}`;
-    //     first.classList.add("modal-first", "modal-data");
-    //     modalBody.appendChild(first);
-
-    //     const last = document.createElement("p");
-    //     last.textContent = `Last Slam: ${player.lastSlam}`;
-    //     last.classList.add("modal-last", "modal-data");
-    //     modalBody.appendChild(last);
-
-    //     const text = document.createElement("p");
-    //     text.textContent = player.text;
-    //     text.classList.add("modal-text", "modal-data");
-    //     modalBody.appendChild(text);
-    //   }
-    // })
+        
     
-    //ADDED TODAY
-
-    // const modalBtns = document.getElementsByClassName("modalBtn");
-    // console.log(typeof(modalBtns));
-    // const modalOpenBtns = Object.entries(playerWrapper);
-    // console.log(typeof(modalOpenBtns));
-    // console.log(playerList.childNodes);
-
-    // [...modalBtns].forEach(function(btn) {
-    //   btn.addEventListener("click", function (e) {
-        // players.forEach(function (player) {
-          // if (e.target.id = player.id) {
-            // console.log(player.name);
-          // }
-        // })
-        // if (e.target = playerWrapper) {
-        //   console.log(typeof(playerWrapper));
-    //     }
-    //   })
-    // })
-    // for (let i = 0; i < modalBtns.length; i++) {
-    //   modalBtns[i].addEventListener("click", function (e) {
-    //     players.forEach(function (player) {
-    //       if (e.target.id.value == player.id) {
-    //         console.log(player.name);
-    //       }
-    //     })
-    // })
-    // }
 
     const nameTag = document.createElement("h2");
     nameTag.innerHTML = player.name;
@@ -586,13 +432,6 @@ window.onload = function() {
     for(const player of players) {
       const nameTag = createPlayer(player);
       playerList.appendChild(nameTag);
-      // playerList.addEventListener("click", function (e) {
-      //   players.forEach(function (player) {
-      //     if (e.target == player.id) {
-      //       console.log(player.name);
-      //     }
-      //   })
-      // })
     }
   }
 
@@ -630,47 +469,3 @@ window.onload = function() {
 
   init();
 }
-
-// const modalBtns = document.querySelectorAll("modalBtn");
-// for (let i = 0; i < modalBtns.length; i++) {
-//   modalBtns[i].addEventListener("click", function () {
-//     console.log("clicked");
-// })
-// }
-
-    // NEW 
-    // playerWrapper.classList.add(".modal-open");
-
-    //test git
-
-    //git test branch
-
-    // playerWrapper.addEventListener("click", function() {
-    //   // alert("modal working");
-    //   function createModal(modal) {
-    //     const modalWrapper = document.createElement("div");
-    //     modalWrapper.classList.add("modal-wrapper");
-
-    //     const modalHead = document.createElement("h3");
-    //     modalHead.innerHTML = player.name;
-
-    //     const closeBtns = document.createElement("span");
-    //     closeBtns.innerHTML = "x";
-    //     closeBtns.classList.add(".close-btns");
-
-    //     const playerStats = document.createElement("p");
-    //     playerStats.innerHTML = "Born: " + player.dob + "<br>" + "nationality: " + player.nationality + "<br>" + "First Slam: " + player.firstSlam + "<br>" + "Last Slam: " + player.lastSlam + "<br>" + "Total Slams: " + player.slams + "<br>" + "Total Titles: " + player.titles;
-    //     playerStats.classList.add(".modal-stats");
-
-    //     const playerText = document.createElement("p");
-    //     playerText.innerHTML = player.text;
-    //     playerText.classList.add(".modal-text");
-
-    //     const modalTable = document.createElement("table");
-    //     modalTable.innerHTML = "";
-    //     modalTable.classList.add(".modal-table");
-
-    //     const modalImage = document.createElement("img");
-    //     modalImage.src = player.modalPhoto;
-    //     modalImage.classList.add(".modal-img");
-    // })

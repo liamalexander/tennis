@@ -4,7 +4,8 @@
 
 body {
   font-family: sans-serif;
-  background: cornflowerblue;
+  /* background: cornflowerblue; */
+  background: #f5f5f5;
 }
 
 /*comment*/
@@ -18,20 +19,24 @@ header div {
 }
 
 nav {
-  background-color: aqua;
+  /* background-color: aqua; */
+  background: #6495ED;
   width: 100%;
   display: flex;
-  justify-content: center;  
+  justify-content: center;
+  position: absolute;
+  top: 0;  
 }
 
 nav a {
   text-decoration: none;
   text-transform: uppercase;
   padding: 10px 20px;
+  color: #fff;
 }
 
 nav a:hover {
-  background:red;
+  background: blueviolet;
 }
 
 h1 {
@@ -45,13 +50,15 @@ h1 {
   margin: 0 auto;
   max-width: 1000px;
   text-align: center;
+  flex: 1;
+  min-height: 90vh;
 }
 
 #searchBar {
   width: 100%;
   height: 32px;
-  border-radius: 3px;
-  border: 1px solid #eaeaea;
+  border-radius: 10px;
+  border: 1px solid #6495ED;
   padding: 5px 10px;
   font-size: 12px;
 }
@@ -72,11 +79,14 @@ h1 {
   grid-template-columns: 2fr 2fr;
   margin-left: -42px;
   gap: 10px;
+  color: #fff;
 }
 
 #playerList div {
-  background: antiquewhite;
-  border-radius: 5px;
+  /* background: antiquewhite; */
+  /* background: #0492C2; */
+  background: #6495ED;
+  border-radius: 10px;
   margin: 5px;
   max-height: 120px;
   line-height: 0;
@@ -122,10 +132,10 @@ h1 {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: azure;
-  /* position: absolute;
-  bottom: 0;
-  width: 100%; */
+  background: blueviolet;
+  width: 100%;
+  position: absolute;
+  left: 0;
 }
 
 .social-icon {
@@ -133,111 +143,146 @@ h1 {
   color: dodgerblue;
 }
 
-.modal {
+#modal {
   display: none;
-  position: fixed;
-  z-index: 1;
-  left: 0;
-  top: 0;
-  width: 100%;
   height: 100%;
-  overflow: auto;
-  background-color: rgb(0,0,0);
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  align-items: center;
+  justify-content: center;
   background-color: rgba(0,0,0,0.4);
-  grid-template-columns: 2fr 2fr 2fr 2fr;
-  grid-template-rows: auto;  /*2fr 1fr for others 2fr text and table each*/
-  grid-template-areas: 
-      /* "head head head head" */
-      "body body body body"
-      /* "dob dob pic pic"
-      "nation nation pic pic"
-      "titles titles pic pic"
-      "slams slams pic pic"
-      "first first pic pic"
-      "last last pic pic"
-      "text text text text"
-      "table table table table"; */
 }
 
-.modal-body {
-  grid-area: body;
-  background: #ffffff;
+#modal-wrapper {
+  display: flex;
+  flex-direction: column;
   width: 80%;
-  height: 70%;
-  justify-self: center;
-  align-self: center;
-  text-align: center;
-  display: grid;
-  grid-template-columns: 2fr 2fr 2fr 2fr;
-  grid-template-rows: auto;
-  grid-template-areas:
-      "head head head head" 
-      "dob dob pic pic"
-      "nation nation pic pic"
-      "titles titles pic pic"
-      "slams slams pic pic"
-      "first first pic pic"
-      "last last pic pic"
-      "text text text text"
-      "table table table table";;
+  align-items: center;
+  justify-content: center;
+  /* height: 80%; */
 }
 
 .modal-header {
-grid-area: head;
-background: crimson;
-width: 100%;
-margin-top: 0;
-display: flex;
-align-items: center;
-justify-content: center;
+  display: flex;
+  background: #0492C2;
+  width: 80%;
+  justify-content: center;
+  border-radius: 15px 15px 0 0;
+  height: 50px;
+  align-items: center;
+  color: #fff;
 }
 
-.modal-pic {
-  grid-area: pic;
-  height: 250px;
-  width: 75%;
-  /* margin-top: -30px; */
-  margin-left: 30px;
-  object-fit: cover;
+.modal-close {
+  /* position: relative;
+  left: 350px; */
+  position: absolute;
+  right: 20%;
+  background: #fff;
+  border: none;
+  font-weight: bolder;
+}
+
+.modal-body {
+  display: flex;
+  /* background: #fff; */
+  width: 80%;
+}
+
+.modal-body div {
+  width: 50%;
+  /* display: flex; */
+  justify-content: center;
 }
 
 .modal-data {
-  margin: auto;
+  display: block;
+  background: #fff;
 }
 
-.modal-dob {
-  grid-area: dob;
+.data {
+  margin-left: 10%;
+  margin-top: 2vh;
+  white-space: nowrap;
 }
 
-.modal-nation {
-  grid-area: nation;
+.first data {
+  width: max-content;
 }
 
-.modal-titles {
-  grid-area: titles;
+.last {
+  width: 100%;
+  margin-bottom: 10px;
 }
 
-.modal-slams {
-  grid-area: slams;
+.pic {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
 }
 
-.modal-first {
-  grid-area: first;
-}
-
-.modal-last {
-  grid-area: last;
+.modal-pic {
+  height: 90%;
+  width: 80%;
+  max-height: 220px;
+  border-radius: 10px;
 }
 
 .modal-text {
-  grid-area: text;
+  display: flex;
+  background: #fff;
+  width: 80%;
+  justify-content: center;
+  height: 12vh;
+  align-items: center;
+  border-top: 1px solid #eee;
+}
+
+.text {
+  margin-left: 3vw;
+  margin-right: 2vw;
+  line-height: 25px;
 }
 
 .modal-table {
-  grid-area: table;
+  display: flex;
+  width: 80%;
+  background: #fff;
+  justify-content: center;
+  border-radius: 0 0 5px 5px;
 }
 
-.modal-close-btn {
-  position: relative;
-  left: 43%;
+.table {
+  width: 100%;
+}
+
+th {
+  width: 25%;
+}
+
+td {
+  text-align: center;
+}
+
+.aus {
+  background: #63C5DA
+}
+
+.fre {
+  background: #ED7117;
+}
+
+.wim {
+  background: #03AC13;
+}
+
+.uso {
+  background: #7A4988;
+}
+
+.modalBtn {
+  flex: 1;
 }
