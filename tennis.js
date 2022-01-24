@@ -9,7 +9,7 @@ window.onload = function() {
       "firstSlam": "Wimbledon 2003",
       "lastSlam": "Australian Open 2018",
       "titles": 103,
-      "text": "Federer has won a men's record 20 Grand Slam singles titles.",
+      "text": "Federer has won a mens shared record of 20 Grand Slam singles titles.  He has won more Wimbledon titles (8) than any other male player in history.",
       "aus": 6,
       "fre": 1,
       "wim": 8,
@@ -26,7 +26,7 @@ window.onload = function() {
       "firstSlam": "French Open 2005",
       "lastSlam": "French Open 2020",
       "titles": 89,
-      "text": "Nadal has won 13 French Open titles, more than any player at any Grand Slam event.",
+      "text": "Nadal has won a mens shared record of 20 Grand Slam singles titles.  He has won 13 French Open titles, more than any player at any Grand Slam event.",
       "aus": 1,
       "fre": 13,
       "wim": 2,
@@ -43,7 +43,7 @@ window.onload = function() {
       "firstSlam": "Australian Open 2008",
       "lastSlam": "Wimbledon 2021",
       "titles": 86,
-      "text": "Djokovic is the only male player to complete the non-calender year Grand Slam, winning all 4 Slams from Wimbledon 2015 - French Open 2016.",
+      "text": "Djokovic has won a mens shared record of 20 Grand Slam singles titles.  He is the only male player to complete the non-calender year Grand Slam, winning all 4 Slams from Wimbledon 2015 - French Open 2016.",
       "aus": 9,
       "fre": 2,
       "wim": 6,
@@ -60,7 +60,7 @@ window.onload = function() {
       "firstSlam": "US Open 1990",
       "lastSlam": "US Open 2002",
       "titles": 64,
-      "text": "Sampras ended 6 consecutive years as the world number 1 player.",
+      "text": "Sampras ended 6 consecutive years (1993 - 1998) as the world number 1 player, a record for a male player.",
       "aus": 2,
       "fre": 0,
       "wim": 7,
@@ -77,7 +77,7 @@ window.onload = function() {
       "firstSlam": "French Open 1974",
       "lastSlam": "French Open 1981",
       "titles": 66,
-      "text": "Borg won 5 consecutive Wimbledon titles (1976 - 1980) and did the French Open - Wimbledon double 3 times.",
+      "text": "In addition to his 6 French Open titles, Borg won 5 consecutive Wimbledon titles (1976 - 1980).  He completed the French Open - Wimbledon double 3 times in his career.",
       "aus": 0,
       "fre": 6,
       "wim": 5,
@@ -341,15 +341,10 @@ window.onload = function() {
     }
   ];
 
-  window.onload = function() {
-    for (let i = 0; i < players.length; i++) {
-      // console.log(players[i].name);
-      players[i].addEventListener('click', function() {
-        alert(player[i].name);
-      })
-    };
-  }
-
+  const closeBtn = document.querySelector(".modal-close");
+  closeBtn.addEventListener("click", function (e) {
+    modal.style.display = "none";
+  });
 
   const playerList = document.getElementById("playerList");
 
@@ -392,13 +387,6 @@ window.onload = function() {
           freWin.textContent = player.fre;
           wimWin.textContent = player.wim;
           usWin.textContent = player.uso;
-
-          const closeModal = function (e) {
-              modal.style.display = "none";
-          };
-
-          modalCloseBtn.addEventListener("click", closeModal);
-          // modal.addEventListener("click", closeModal);
 
         }, false)
 
