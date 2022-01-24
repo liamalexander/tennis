@@ -132,15 +132,17 @@ h1 {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: blueviolet;
+  background: #6495ED;
   width: 100%;
   position: absolute;
   left: 0;
+  color: #fff;
 }
 
 .social-icon {
   padding: 0 20px;
-  color: dodgerblue;
+  /* color: dodgerblue; */
+  color: #fff;
 }
 
 #modal {

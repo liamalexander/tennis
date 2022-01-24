@@ -359,8 +359,6 @@ window.onload = function() {
     playerWrapper.id = player.id;
         //CREATE THE OTHER PAGES IN NAV AND LINK THEM, ALLY SAID USE HTML LINKS TO EACH
         //IN VIDEOS TRY TO USE ASYNC TO GET THEM INSTEAD?
-        //TIDY DESIGN
-        //MAKE FOOTER STICKY
         //NODE SERVER
 
         playerWrapper.addEventListener("click", function (e) {
