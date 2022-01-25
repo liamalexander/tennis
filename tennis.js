@@ -341,10 +341,10 @@ window.onload = function() {
     }
   ];
 
-  const closeBtn = document.querySelector(".modal-close");
-  closeBtn.addEventListener("click", function (e) {
-    modal.style.display = "none";
-  });
+  // const closeBtn = document.querySelector(".modal-close");
+  // closeBtn.addEventListener("click", function () {
+  //   modal.style.display = "none";
+  // });
 
   const playerList = document.getElementById("playerList");
 
@@ -455,12 +455,18 @@ window.onload = function() {
 
   const responsiveNav = function () {
     const nav = document.querySelector(".topnav");
-    if (nav.className === "topnav") {
+    // if (nav.className === "topnav") {
       nav.classList.add("responsive");
-    } else {
-      nav.classList.remove("responsive");
-    }
+    // }
+    //  else {
+  //     nav.classList.remove("responsive");
+  //   }
   };
+
+  const closeBtn = document.querySelector(".modal-close");
+  closeBtn.addEventListener("click", function () {
+    modal.style.display = "none";
+  });
 
   const navMenu = document.querySelector(".icon");
   navMenu.addEventListener("click", responsiveNav);

@@ -172,7 +172,7 @@ h1 {
 .modal-header {
   display: flex;
   background: #0492C2;
-  width: 80%;
+  width: 90%;
   justify-content: center;
   border-radius: 15px 15px 0 0;
   height: 50px;
@@ -182,7 +182,7 @@ h1 {
 
 .modal-close {
   position: absolute;
-  right: 20%;
+  right: 15%;
   background: #fff;
   border: none;
   font-weight: bolder;
@@ -190,7 +190,7 @@ h1 {
 
 .modal-body {
   display: flex;
-  width: 80%;
+  width: 90%;
 }
 
 .modal-body div {
@@ -236,9 +236,9 @@ h1 {
 .modal-text {
   display: flex;
   background: #fff;
-  width: 80%;
+  width: 90%;
   justify-content: center;
-  height: 12vh;
+  height: 14vh;
   align-items: center;
   border-top: 1px solid #eee;
 }
@@ -251,7 +251,7 @@ h1 {
 
 .modal-table {
   display: flex;
-  width: 80%;
+  width: 90%;
   background: #fff;
   justify-content: center;
   border-radius: 0 0 5px 5px;
@@ -289,7 +289,7 @@ td {
   flex: 1;
 }
 
-@media only screen and (max-width: 640px) {
+@media only screen and (max-width: 830px) {
   .topnav {
     display: flex;
     justify-content: flex-start;
