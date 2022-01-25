@@ -453,5 +453,17 @@ window.onload = function() {
     addHandlers();
   }
 
+  const responsiveNav = function () {
+    const nav = document.querySelector(".topnav");
+    if (nav.className === "topnav") {
+      nav.classList.add("responsive");
+    } else {
+      nav.classList.remove("responsive");
+    }
+  };
+
+  const navMenu = document.querySelector(".icon");
+  navMenu.addEventListener("click", responsiveNav);
+
   init();
 }
