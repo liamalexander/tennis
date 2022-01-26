@@ -491,6 +491,23 @@ const responsiveNav = function () {
 const navMenu = document.querySelector(".icon");
 navMenu.addEventListener("click", responsiveNav);
 
+const quizQuestions = [
+  {
+    id : 1,
+    question : "How many Wimbledon singles titles has Roger Federer won?",
+    options : [
+      a
+    ],
+  }
+]
+
+const displayQuizQuestions = function () {
+  const quizContainer = document.getElementById("quiz-questions");
+  if (quizContainer) {
+
+  }
+}
+
 function init() {
   displayPlayersInit();
   searchInputInit();
