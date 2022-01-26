@@ -1,4 +1,4 @@
-const PLAYERS = [
+const players = [
   {
     id: 1,
     name: "Federer",
@@ -383,12 +383,8 @@ function createPlayer(player) {
   const playerWrapper = document.createElement("div");
   playerWrapper.classList.add("modalBtn");
   playerWrapper.id = player.id;
-  //CREATE THE OTHER PAGES IN NAV AND LINK THEM, ALLY SAID USE HTML LINKS TO EACH
-  //IN VIDEOS TRY TO USE ASYNC TO GET THEM INSTEAD?
-  //NODE SERVER
 
-  playerWrapper.addEventListener(
-    "click",
+  playerWrapper.addEventListener("click",
     function (e) {
       const modal = document.getElementById("modal");
       const playerName = document.querySelector(".name");
@@ -404,7 +400,6 @@ function createPlayer(player) {
       const freWin = document.getElementById("fre1");
       const wimWin = document.getElementById("wim1");
       const usWin = document.getElementById("uso1");
-      const modalCloseBtn = document.querySelector(".modal-close");
 
       modal.style.display = "flex";
       playerName.textContent = player.name;
@@ -420,16 +415,14 @@ function createPlayer(player) {
       freWin.textContent = player.fre;
       wimWin.textContent = player.wim;
       usWin.textContent = player.uso;
+    });
 
-      const closeModal = function (e) {
-        modal.style.display = "none";
-      };
+  const closeModal = function (e) {
+  modal.style.display = "none";
+  };
 
-      modalCloseBtn.addEventListener("click", closeModal);
-      // modal.addEventListener("click", closeModal);
-    },
-    false
-  );
+  const modalCloseBtn = document.querySelector(".modal-close");
+  modalCloseBtn.addEventListener("click", closeModal, false);
 
   const nameTag = document.createElement("h2");
   nameTag.innerHTML = player.name;
@@ -461,37 +454,34 @@ function displayPlayersInit() {
   }
 }
 
+function filteredPlayers(e) {
+  if (playerList) {
+    playerList.innerHTML = "";
+
+  const value = e.target.value.toLowerCase();
+  if (value.length === 0) {
+    displayPlayersInit();
+  }
+
+  if (value.length > 0) {
+    for (const player of players) {
+      const name = player.name.toLocaleLowerCase();
+      const nation = player.nationality.toLocaleLowerCase();
+      if (name.includes(value) || nation.includes(value)) {
+        const nameTag = createPlayer(player);
+        playerList.appendChild(nameTag);
+      }
+    }
+  }
+  }
+}
+
 function searchInputInit() {
   const searchInput = document.getElementById("searchBar");
   if (searchInput) {
-    searchInput.addEventListener(
-      "keyup",
-      () => {
-        const playerList = document.getElementById("playerList");
-
-        playerList.innerHTML = "";
-
-        const value = e.target.value.toLowerCase();
-        // if not input - display players
-        if (value.length === 0) {
-          displayPlayers();
-        }
-
-        if (value.length > 0) {
-          for (const player of players) {
-            const name = player.name.toLowerCase();
-            const nation = player.nationality.toLowerCase();
-            if (name.includes(value) || nation.includes(value)) {
-              const nameTag = createPlayer(player);
-              playerList.appendChild(nameTag);
-            }
-          }
-        }
-      },
-      false
-    );
+    searchInput.addEventListener("keyup", filteredPlayers, false);
   }
-}
+};
 
 function init() {
   displayPlayersInit();
@@ -501,5 +491,3 @@ function init() {
 window.onload = function () {
   init();
 };
-
-//check branch
