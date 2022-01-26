@@ -483,6 +483,14 @@ function searchInputInit() {
   }
 };
 
+const responsiveNav = function () {
+  const nav = document.querySelector(".topnav");
+  nav.classList.add("responsive");
+};
+
+const navMenu = document.querySelector(".icon");
+navMenu.addEventListener("click", responsiveNav);
+
 function init() {
   displayPlayersInit();
   searchInputInit();
