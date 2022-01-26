@@ -534,6 +534,7 @@ const correct = function (e) {
 const incorrect = function (e) {
   e.target.style.background = "crimson";
   nextBtn.style.display = "flex";
+  //add green background to the correct option here
 };
 
 const checkAnswer = function (e) {
@@ -545,13 +546,14 @@ const checkAnswer = function (e) {
 }
 
 const nextQuestion = function () {
-  questionNumber++;
+  questionNumber = questionNumber +1;
+  console.log(quizQuestions[questionNumber - 1].id);
   // console.log(questionNumber);
-  //PROBLEM WITH ID AND QUESTION BELOW, UNDEFINED?  
-  question.textContent = `${quizQuestions[questionNumber].id}) ${quizQuestions[questionNumber].question}`;
+  //PROBLEM WITH ID AND QUESTION BELOW, UNDEFINED? -- IT'S SOMETHING WITH THE QUESTION # AND WHEN IT CHANGES 
+  question.textContent = `${quizQuestions[questionNumber - 1].id}) ${quizQuestions[questionNumber - 1].question}`;
 
-  for (let i = 0; i < quizQuestions[questionNumber].options.length; i++) {
-    options[i].textContent += ` ${quizQuestions[questionNumber].options[i]}`;
+  for (let i = 0; i < quizQuestions[questionNumber -1].options.length; i++) {
+    options[i].innerHTML = ` ${quizQuestions[questionNumber -1].options[i]}`;
   }
 }
 
@@ -573,7 +575,7 @@ const displayQuizQuestions = function () {
     question.textContent = `${quizQuestions[0].id}) ${quizQuestions[0].question}`;
 
     for (let i = 0; i < quizQuestions[0].options.length; i++) {
-      options[i].textContent += ` ${quizQuestions[0].options[i]}`;
+      options[i].textContent = ` ${quizQuestions[0].options[i]}`;
       questionNumber = 1;
     }
   }
