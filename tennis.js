@@ -496,21 +496,101 @@ const quizQuestions = [
     id : 1,
     question : "How many Wimbledon singles titles has Roger Federer won?",
     options : [
-      a
+      "6",
+      "7",
+      "8"
     ],
+    correctAnswer : "c",
+    correctIndex : 2
+  },
+  {
+    id : 2,
+    question : "How many times has Rafael Nadal lost at the French Open?",
+    options : [
+      "2",
+      "3",
+      "4"
+    ],
+    correctAnswer : "b",
+    correctIndex : 1 
   }
-]
+];
+
+let questionNumber;
+let score = 0;
+const question = document.querySelector(".question");
+const options = Array.from(document.querySelectorAll(".options"));
+const nextBtn = document.querySelector(".next-btn");
+
+console.log(typeof(options));
+
+//this needs to be an array not an object - options
+
 
 const displayQuizQuestions = function () {
   const quizContainer = document.getElementById("quiz-questions");
   if (quizContainer) {
+    question.textContent = `${quizQuestions[0].id}) ${quizQuestions[0].question}`;
 
+    for (let i = 0; i < quizQuestions[0].options.length; i++) {
+      options[i].textContent += ` ${quizQuestions[0].options[i]}`;
+      questionNumber = 1;
+    }
   }
 }
+
+const correctAns = function (e) {
+  score++;
+  // e.target.style.background = "green";
+  nextBtn.style.display = "flex";
+  questionNumber++;
+};
+
+const incorrectAns = function (e) {
+  // e.target.style.background = "crimson";
+  nextBtn.style.display = "flex";
+  showCorrectAns();
+  questionNumber++;
+};
+
+const showCorrectAns = function (e) {
+  options.forEach(option => {
+    if (quizQuestions[questionNumber].correctAnswer === option.id) {
+      option.style.background = "green";
+    }
+  })
+}
+
+const checkAnswer = function (e) {
+  for (q of quizQuestions) {
+    if (questionNumber === q.id && e.target.id === q.correctAnswer) {
+      correctAns();
+    } else {
+      showCorrectAns();
+      incorrectAns();
+    }
+  }
+}
+
+for (let i = 0; i < options.length; i++) {
+  options[i].addEventListener("click", checkAnswer, false);
+}
+
+const nextQuestion = function () {
+  if (nextBtn) {
+    question.textContent = `${quizQuestions[questionNumber].id}) ${quizQuestions[questionNumber].question}`;
+    for (let i = 0; i < quizQuestions[questionNumber].options.length; i++) {
+      options[i].textContent += ` ${quizQuestions[questionNumber].options[i]}`;
+    }
+  }
+}
+
+nextBtn.addEventListener("click", nextQuestion, false);
 
 function init() {
   displayPlayersInit();
   searchInputInit();
+  displayQuizQuestions();
 }
 
 window.onload = function () {
