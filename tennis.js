@@ -522,10 +522,50 @@ const question = document.querySelector(".question");
 const options = Array.from(document.querySelectorAll(".options"));
 const nextBtn = document.querySelector(".next-btn");
 
-console.log(typeof(options));
+//THE CODE BELOW WORKS MORE OR LESS - START FROM HERE AND BUILD IT BACK UP
 
-//this needs to be an array not an object - options
+const correct = function (e) {
+  e.target.style.background = "green";
+  score++;
+  console.log(score);
+  nextBtn.style.display = "flex";
+};
 
+const incorrect = function (e) {
+  e.target.style.background = "crimson";
+  nextBtn.style.display = "flex";
+};
+
+const checkAnswer = function (e) {
+  if (e.target.id === quizQuestions[questionNumber - 1].correctAnswer) {
+    correct(e);
+  } else {
+    incorrect(e);
+  }
+}
+
+const nextQuestion = function () {
+  questionNumber++;
+  // console.log(questionNumber);
+  //PROBLEM WITH ID AND QUESTION BELOW, UNDEFINED?  
+  question.textContent = `${quizQuestions[questionNumber].id}) ${quizQuestions[questionNumber].question}`;
+
+  for (let i = 0; i < quizQuestions[questionNumber].options.length; i++) {
+    options[i].textContent += ` ${quizQuestions[questionNumber].options[i]}`;
+  }
+}
+
+nextBtn.addEventListener("click", nextQuestion, false);
+
+// console.log(typeof(options));
+options.forEach(function (btn) {
+  btn.addEventListener("click", checkAnswer, false);
+    // console.log(e.target.id);
+    // if (e.target.id === quizQuestions[questionNumber - 1].correctAnswer) {
+      // console.log("correct");
+    // }
+})
+// })
 
 const displayQuizQuestions = function () {
   const quizContainer = document.getElementById("quiz-questions");
@@ -539,53 +579,53 @@ const displayQuizQuestions = function () {
   }
 }
 
-const correctAns = function (e) {
-  score++;
-  // e.target.style.background = "green";
-  nextBtn.style.display = "flex";
-  questionNumber++;
-};
+// const correctAns = function (e) {
+//   score++;
+//   e.target.style.background = "green";
+//   nextBtn.style.display = "flex";
+//   questionNumber++;
+// };
 
-const incorrectAns = function (e) {
-  // e.target.style.background = "crimson";
-  nextBtn.style.display = "flex";
-  showCorrectAns();
-  questionNumber++;
-};
+// const incorrectAns = function (e) {
+//   e.target.style.background = "crimson";
+//   nextBtn.style.display = "flex";
+//   showCorrectAns();
+//   questionNumber++;
+// };
 
-const showCorrectAns = function (e) {
-  options.forEach(option => {
-    if (quizQuestions[questionNumber].correctAnswer === option.id) {
-      option.style.background = "green";
-    }
-  })
-}
+// const showCorrectAns = function (e) {
+//   options.forEach(option => {
+//     if (quizQuestions[questionNumber].correctAnswer === option.id) {
+//       option.style.background = "green";
+//     }
+//   })
+// }
 
-const checkAnswer = function (e) {
-  for (q of quizQuestions) {
-    if (questionNumber === q.id && e.target.id === q.correctAnswer) {
-      correctAns();
-    } else {
-      showCorrectAns();
-      incorrectAns();
-    }
-  }
-}
+// const checkAnswer = function (e) {
+//   for (q of quizQuestions) {
+//     if (questionNumber === q.id && e.target.id === q.correctAnswer) {
+//       correctAns();
+//     } else {
+//       showCorrectAns();
+//       incorrectAns();
+//     }
+//   }
+// }
 
-for (let i = 0; i < options.length; i++) {
-  options[i].addEventListener("click", checkAnswer, false);
-}
+// for (let i = 0; i < options.length; i++) {
+//   options[i].addEventListener("click", checkAnswer, false);
+// }
 
-const nextQuestion = function () {
-  if (nextBtn) {
-    question.textContent = `${quizQuestions[questionNumber].id}) ${quizQuestions[questionNumber].question}`;
-    for (let i = 0; i < quizQuestions[questionNumber].options.length; i++) {
-      options[i].textContent += ` ${quizQuestions[questionNumber].options[i]}`;
-    }
-  }
-}
+// const nextQuestion = function () {
+//   if (nextBtn) {
+//     question.textContent = `${quizQuestions[questionNumber].id}) ${quizQuestions[questionNumber].question}`;
+//     for (let i = 0; i < quizQuestions[questionNumber].options.length; i++) {
+//       options[i].textContent += ` ${quizQuestions[questionNumber].options[i]}`;
+//     }
+//   }
+// }
 
-nextBtn.addEventListener("click", nextQuestion, false);
+// nextBtn.addEventListener("click", nextQuestion, false);
 
 function init() {
   displayPlayersInit();
