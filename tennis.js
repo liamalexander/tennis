@@ -341,20 +341,13 @@ window.onload = function() {
     }
   ];
 
-  // const closeBtn = document.querySelector(".modal-close");
-  // closeBtn.addEventListener("click", function () {
-  //   modal.style.display = "none";
-  // });
-
   const playerList = document.getElementById("playerList");
 
   function createPlayer(player) {
     const playerWrapper = document.createElement("div");
+    if (playerList) {
     playerWrapper.classList.add("modalBtn");
     playerWrapper.id = player.id;
-        //CREATE THE OTHER PAGES IN NAV AND LINK THEM, ALLY SAID USE HTML LINKS TO EACH
-        //IN VIDEOS TRY TO USE ASYNC TO GET THEM INSTEAD?
-        //NODE SERVER
 
         playerWrapper.addEventListener("click", function (e) {
           const modal = document.getElementById("modal");
@@ -389,6 +382,7 @@ window.onload = function() {
           usWin.textContent = player.uso;
 
         }, false)
+    };
 
         
     
@@ -415,37 +409,42 @@ window.onload = function() {
   }
   
   function displayPlayers() {
-    for(const player of players) {
-      const nameTag = createPlayer(player);
-      playerList.appendChild(nameTag);
+    if (playerList) {
+      for(const player of players) {
+        const nameTag = createPlayer(player);
+        playerList.appendChild(nameTag);
+      }
     }
   }
 
   function filteredPlayers(e) {
-    playerList.innerHTML = "";
+    if (playerList) {
+      playerList.innerHTML = "";
 
-    const value = e.target.value.toLowerCase();
-    // if not input - display players 
-    if (value.length === 0) {
-      displayPlayers();
-    }
+      const value = e.target.value.toLowerCase();
+      // if not input - display players 
+      if (value.length === 0) {
+        displayPlayers();
+      }
 
-    if (value.length > 0) {
-      for (const player of players) {
-        const name = player.name.toLowerCase();
-        const nation = player.nationality.toLowerCase();
-        if (name.includes(value) || nation.includes(value)) {
-          const nameTag = createPlayer(player);
-          playerList.appendChild(nameTag);
+      if (value.length > 0) {
+        for (const player of players) {
+          const name = player.name.toLowerCase();
+          const nation = player.nationality.toLowerCase();
+          if (name.includes(value) || nation.includes(value)) {
+            const nameTag = createPlayer(player);
+            playerList.appendChild(nameTag);
+          }
         }
       }
     }
-    
   }
 
   function addHandlers() {
     const searchInput = document.getElementById("searchBar");
-    searchInput.addEventListener("keyup", filteredPlayers, false);
+    if (searchInput) {
+      searchInput.addEventListener("keyup", filteredPlayers, false);
+    }
   }
 
   function init() {
