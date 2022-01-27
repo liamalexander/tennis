@@ -185,6 +185,7 @@ h1 {
   background: #fff;
   border: none;
   font-weight: bolder;
+  cursor: pointer;
 }
 
 .modal-body {
@@ -286,6 +287,7 @@ td {
 
 .modalBtn {
   flex: 1;
+  cursor: pointer;
 }
 
 .quiz-wrapper {
@@ -327,6 +329,7 @@ td {
   border: 3px solid blueviolet;
   font-size: 2vh;
   font-weight: 600;
+  cursor: pointer;
 }
 
 .nxt-btn-container {
@@ -341,6 +344,7 @@ td {
   background: blueviolet;
   color: #fff;
   border: none;
+  cursor: pointer;
 }
 
 .score-container {
@@ -366,6 +370,13 @@ td {
   background: blueviolet;
   color: #fff;
   border: none;
+  cursor: pointer;
+}
+
+#accordion-container {
+  justify-content: center;
+  flex: 1;
+  margin: 40px;
 }
 
 @media only screen and (max-width: 830px) {

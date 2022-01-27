@@ -652,10 +652,105 @@ const displayQuizQuestions = function () {
 
 // playAgainBtn.addEventListener("click", displayQuizQuestions, false);
 
+// const rivalriesData = [
+//   {
+//     rival1 : "Federer",
+//     rival2 : "Nadal",
+//     pic1 : "https://i.pinimg.com/474x/ab/fb/a4/abfba4b33d34f5523e1c894d94a8b9c4--face-books-god-bless-you.jpg",
+//     pic2 : "https://media.nu.nl/m/kwcxto5aocvw_sqr256.jpg/nadal-door-nieuwe-zege-zonder-setverlies-stap-dichter-bij-21e-grand-slam-titel.jpg",
+//     wins1 : 16,
+//     wins2 : 24,
+//     finals1 : 3,
+//     finals2 : 6,
+//     slamWins1 : 4,
+//     slamWins2 : 10,
+//     hard1 : 11,
+//     hard2 : 9,
+//     clay1 : 2,
+//     clay2 : 14,
+//     grass1 : 3,
+//     grass2 : 1,
+//     carpet1 : 0,
+//     carpet2 : 0
+//   },
+//   {
+//     rival1 : "Evert",
+//     rival2 : "Navratilova",
+//     pic1 : "https://static.ffx.io/images/$width_375%2C$height_211/t_crop_fill/q_86%2Cf_auto/7a9a75e493dc409bd771a18328fc692de7186028",
+//     pic2 : "https://ausopen.com/sites/default/files/styles/facebook_share/public/navratilova_gc_h_h.jpg?itok=Zt4HYwAF",
+//     wins1 : 37,
+//     wins2 : 43,
+//     finals1 : 4,
+//     finals2 : 10,
+//     slamWins1 : 8,
+//     slamWins2 : 14,
+//     hard1 : 8,
+//     hard2 : 8,
+//     clay1 : 11,
+//     clay2 : 3,
+//     grass1 : 5,
+//     grass2 : 10,
+//     carpet1 : 13,
+//     carpet2 : 22
+//   },
+// ];
+
+const rivalriesData = [
+  [{
+    id : 1,
+    name : "Federer"
+  },{
+    id : 2,
+    name : "Nadal"
+  }],
+  [{
+    id : 3,
+    name : "Evert"
+  },{
+    id : 4,
+    name : "Navratilova"
+  }]
+];
+
+// const createAccordion = function (rival) {
+//   const rivalWrapper = document.createElement("div");
+
+//   const rivalHead = document.createElement("h2");
+//   rivalHead.innerHTML = rival.name;
+
+//   rivalWrapper.appendChild(rivalHead);
+
+//   return rivalWrapper;
+// }
+
+// const displayAccordion = function () {
+//   const container = document.getElementById("accordion-container");
+//   if (container) {
+//     for (const rival of rivalriesData) {
+//       const heading = createAccordion(rival);
+//       container.appendChild(heading);
+      // console.log(rivalriesData, heading);
+      // const map = {};
+      // rivalriesData.forEach(rival => {
+      //   rival.forEach(obj => {
+      //     const {id, name} = obj;
+      //     if (map[id]) {
+      //       map[id].push(name);
+      //     } else {
+      //       map[id] = [name]
+      //     }
+      //   })
+      // })
+      // console.log(rival);
+//     }
+//   }
+// };
+
 function init() {
   displayPlayersInit();
   searchInputInit();
   displayQuizQuestions();
+  // displayAccordion();
 };
 
 window.onload = function () {
