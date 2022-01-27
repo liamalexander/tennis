@@ -319,31 +319,42 @@ td {
 .options {
   padding: 20px 120px;
   margin: 10px 40px;
+  border-radius: 15px;
+  background: #fff;
+  border: 3px solid blueviolet;
+}
+
+.nxt-btn-container {
+  display: flex;
 }
 
 .next-btn {
   display: none;
-  width: 50px;
-  /* margin: 30px 0 0 500px; */
-  margin-left: 48%;
-  margin-top: 5vh;
+  margin: 10px auto;
+  padding: 15px;
+  border-radius: 15px;
 }
 
 .score-container {
-  display: none;
+  display: flex;
+  margin: 5vh;
 }
 
 .score {
   margin: auto;
+  display: none;
+  font-size: 4vh;
 }
 
 .again-container {
-  display: none; 
+  display: flex;
 }
 
 .again-btn {
-  display: block;
+  display: none;
   margin: auto;
+  padding: 10px;
+  border-radius: 10px;
 }
 
 @media only screen and (max-width: 830px) {

@@ -517,123 +517,101 @@ const quizQuestions = [
 ];
 
 let questionNumber;
-let score = 0;
+let score;
 const question = document.querySelector(".question");
 const options = Array.from(document.querySelectorAll(".options"));
 const nextBtn = document.querySelector(".next-btn");
-
-//THE CODE BELOW WORKS MORE OR LESS - START FROM HERE AND BUILD IT BACK UP
+const playAgainBtn = document.querySelector(".again-btn");
+const scoreDisplay = document.querySelector(".score");
 
 const correct = function (e) {
   e.target.style.background = "green";
   score++;
-  console.log(score);
   nextBtn.style.display = "flex";
 };
 
 const incorrect = function (e) {
   e.target.style.background = "crimson";
   nextBtn.style.display = "flex";
-  //add green background to the correct option here
+  options.forEach(btn => {
+    if (btn.id == quizQuestions[questionNumber].correctAnswer) {
+      btn.style.background = "green";
+    }
+  })
 };
 
 const checkAnswer = function (e) {
-  if (e.target.id === quizQuestions[questionNumber - 1].correctAnswer) {
+  disableBtns();
+  if (e.target.id === quizQuestions[questionNumber].correctAnswer) {
     correct(e);
   } else {
     incorrect(e);
   }
-}
+};
 
-const nextQuestion = function () {
-  questionNumber = questionNumber +1;
-  console.log(quizQuestions[questionNumber - 1].id);
-  // console.log(questionNumber);
-  //PROBLEM WITH ID AND QUESTION BELOW, UNDEFINED? -- IT'S SOMETHING WITH THE QUESTION # AND WHEN IT CHANGES 
-  question.textContent = `${quizQuestions[questionNumber - 1].id}) ${quizQuestions[questionNumber - 1].question}`;
+const disableBtns = function () {
+  options.forEach(btn => {
+    btn.disabled = true;
+  })
+};
 
-  for (let i = 0; i < quizQuestions[questionNumber -1].options.length; i++) {
-    options[i].innerHTML = ` ${quizQuestions[questionNumber -1].options[i]}`;
+const clearBtns = function () {
+  options.forEach(btn => {
+    btn.style.background = "#fff";
+    btn.disabled = false;
+  })
+};
+
+const nextQuestion = function () {  
+const quizHeader = document.querySelector(".quiz-header");
+  if (quizHeader) {
+    questionNumber++;
+    if (questionNumber < quizQuestions.length) {
+      console.log(questionNumber, quizQuestions.length);
+      clearBtns();
+      question.textContent = `${quizQuestions[questionNumber].id}) ${quizQuestions[questionNumber].question}`;
+
+      for (let i = 0; i < quizQuestions[questionNumber].options.length; i++) {
+        options[i].innerHTML = ` ${quizQuestions[questionNumber].options[i]}`;
+      }
+    } else {
+      nextBtn.style.display = "none";
+      playAgainBtn.style.display = "flex";
+      scoreDisplay.style.display = "flex";
+      scoreDisplay.textContent = `${score} / ${quizQuestions.length}`;
+    }
   }
-}
+};
 
 nextBtn.addEventListener("click", nextQuestion, false);
 
-// console.log(typeof(options));
 options.forEach(function (btn) {
   btn.addEventListener("click", checkAnswer, false);
-    // console.log(e.target.id);
-    // if (e.target.id === quizQuestions[questionNumber - 1].correctAnswer) {
-      // console.log("correct");
-    // }
-})
-// })
+});
 
 const displayQuizQuestions = function () {
   const quizContainer = document.getElementById("quiz-questions");
   if (quizContainer) {
-    question.textContent = `${quizQuestions[0].id}) ${quizQuestions[0].question}`;
+    questionNumber = 0;
+    score = 0;
+    clearBtns();
+    scoreDisplay.style.display = "none";
+    playAgainBtn.style.display = "none";
+    question.textContent = `${quizQuestions[questionNumber].id}) ${quizQuestions[questionNumber].question}`;
 
-    for (let i = 0; i < quizQuestions[0].options.length; i++) {
-      options[i].textContent = ` ${quizQuestions[0].options[i]}`;
-      questionNumber = 1;
+    for (let i = 0; i < quizQuestions[questionNumber].options.length; i++) {
+      options[i].textContent = ` ${quizQuestions[questionNumber].options[i]}`;
     }
   }
-}
+};
 
-// const correctAns = function (e) {
-//   score++;
-//   e.target.style.background = "green";
-//   nextBtn.style.display = "flex";
-//   questionNumber++;
-// };
-
-// const incorrectAns = function (e) {
-//   e.target.style.background = "crimson";
-//   nextBtn.style.display = "flex";
-//   showCorrectAns();
-//   questionNumber++;
-// };
-
-// const showCorrectAns = function (e) {
-//   options.forEach(option => {
-//     if (quizQuestions[questionNumber].correctAnswer === option.id) {
-//       option.style.background = "green";
-//     }
-//   })
-// }
-
-// const checkAnswer = function (e) {
-//   for (q of quizQuestions) {
-//     if (questionNumber === q.id && e.target.id === q.correctAnswer) {
-//       correctAns();
-//     } else {
-//       showCorrectAns();
-//       incorrectAns();
-//     }
-//   }
-// }
-
-// for (let i = 0; i < options.length; i++) {
-//   options[i].addEventListener("click", checkAnswer, false);
-// }
-
-// const nextQuestion = function () {
-//   if (nextBtn) {
-//     question.textContent = `${quizQuestions[questionNumber].id}) ${quizQuestions[questionNumber].question}`;
-//     for (let i = 0; i < quizQuestions[questionNumber].options.length; i++) {
-//       options[i].textContent += ` ${quizQuestions[questionNumber].options[i]}`;
-//     }
-//   }
-// }
-
-// nextBtn.addEventListener("click", nextQuestion, false);
+playAgainBtn.addEventListener("click", displayQuizQuestions, false);
 
 function init() {
   displayPlayersInit();
   searchInputInit();
   displayQuizQuestions();
-}
+};
 
 window.onload = function () {
   init();
