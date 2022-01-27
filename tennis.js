@@ -513,6 +513,50 @@ const quizQuestions = [
     ],
     correctAnswer : "b",
     correctIndex : 1 
+  },
+  {
+    id : 3,
+    question : "At which tournament did Martina Navratilova win 9 of her 18 Grand Slam singles titles?",
+    options : [
+      "US Open",
+      "Wimbledon",
+      "Australian Open"
+    ],
+    correctAnswer : "b",
+    correctIndex : 1
+  },
+  {
+    id : 4,
+    question : "Chris Evert won a women's record singles titles at the French Open.  How many times did she win it?",
+    options : [
+      "7",
+      "8",
+      "9"
+    ],
+    correctAnswer : "a",
+    correctIndex : 0
+  },
+  {
+    id : 5,
+    question : "Who is the only player to ever win all 4 Grand Slams and the Olympic Gold Medal in one season?",
+    options : [
+      "Roger Federer",
+      "Rafael Nadal",
+      "Steffi Graf"
+    ],
+    correctAnswer : "c",
+    correctIndex : 2
+  },
+  {
+    id : 6,
+    question : "In which year was the Calender Year Golden Slam achieved?",
+    options : [
+      "1988",
+      "1992",
+      "1996"
+    ],
+    correctAnswer : "a",
+    correctIndex : 0
   }
 ];
 
@@ -523,16 +567,15 @@ const options = Array.from(document.querySelectorAll(".options"));
 const nextBtn = document.querySelector(".next-btn");
 const playAgainBtn = document.querySelector(".again-btn");
 const scoreDisplay = document.querySelector(".score");
+const quizContainer = document.getElementById("quiz-questions");
 
 const correct = function (e) {
   e.target.style.background = "green";
   score++;
-  nextBtn.style.display = "flex";
 };
 
 const incorrect = function (e) {
   e.target.style.background = "crimson";
-  nextBtn.style.display = "flex";
   options.forEach(btn => {
     if (btn.id == quizQuestions[questionNumber].correctAnswer) {
       btn.style.background = "green";
@@ -547,6 +590,8 @@ const checkAnswer = function (e) {
   } else {
     incorrect(e);
   }
+  nextBtn.style.display = "flex";
+  nextBtn.addEventListener("click", nextQuestion, false);
 };
 
 const disableBtns = function () {
@@ -562,12 +607,11 @@ const clearBtns = function () {
   })
 };
 
-const nextQuestion = function () {  
-const quizHeader = document.querySelector(".quiz-header");
-  if (quizHeader) {
+const nextQuestion = function () {
+    if (quizContainer) {
+    nextBtn.style.display = "none";
     questionNumber++;
     if (questionNumber < quizQuestions.length) {
-      console.log(questionNumber, quizQuestions.length);
       clearBtns();
       question.textContent = `${quizQuestions[questionNumber].id}) ${quizQuestions[questionNumber].question}`;
 
@@ -578,19 +622,20 @@ const quizHeader = document.querySelector(".quiz-header");
       nextBtn.style.display = "none";
       playAgainBtn.style.display = "flex";
       scoreDisplay.style.display = "flex";
-      scoreDisplay.textContent = `${score} / ${quizQuestions.length}`;
+      scoreDisplay.textContent = `Your Score: ${score} / ${quizQuestions.length}`;
+      playAgainBtn.addEventListener("click", displayQuizQuestions, false);
     }
   }
 };
 
-nextBtn.addEventListener("click", nextQuestion, false);
+// nextBtn.addEventListener("click", nextQuestion, false);
+//WONT WORK HERE AS IT DOESNT CALL THE OTHER HTML PAGES SO PUT THEM IN THE OTHER FUNCTIONS
 
 options.forEach(function (btn) {
   btn.addEventListener("click", checkAnswer, false);
 });
 
 const displayQuizQuestions = function () {
-  const quizContainer = document.getElementById("quiz-questions");
   if (quizContainer) {
     questionNumber = 0;
     score = 0;
@@ -605,7 +650,7 @@ const displayQuizQuestions = function () {
   }
 };
 
-playAgainBtn.addEventListener("click", displayQuizQuestions, false);
+// playAgainBtn.addEventListener("click", displayQuizQuestions, false);
 
 function init() {
   displayPlayersInit();
