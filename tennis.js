@@ -712,6 +712,19 @@ const rivalriesData = [
   }]
 ];
 
+const container = document.getElementById("accordion-container");
+
+let rows = rivalriesData.length;
+for (let i = 0; i < rows; i++) {
+  let items = rivalriesData[i].length;
+  console.log(i, items);
+  for (let n = 0; n < items; n++) {
+    console.log(rivalriesData[i][n].name);
+    const div = document.createElement("div");
+    div.textContent = `${rivalriesData[i][n].id} ${rivalriesData[i][n].name}`;
+    container.appendChild(div);
+  }
+};
 // const createAccordion = function (rival) {
 //   const rivalWrapper = document.createElement("div");
 
