@@ -652,118 +652,126 @@ const displayQuizQuestions = function () {
 
 // playAgainBtn.addEventListener("click", displayQuizQuestions, false);
 
-// const rivalriesData = [
-//   {
-//     rival1 : "Federer",
-//     rival2 : "Nadal",
-//     pic1 : "https://i.pinimg.com/474x/ab/fb/a4/abfba4b33d34f5523e1c894d94a8b9c4--face-books-god-bless-you.jpg",
-//     pic2 : "https://media.nu.nl/m/kwcxto5aocvw_sqr256.jpg/nadal-door-nieuwe-zege-zonder-setverlies-stap-dichter-bij-21e-grand-slam-titel.jpg",
-//     wins1 : 16,
-//     wins2 : 24,
-//     finals1 : 3,
-//     finals2 : 6,
-//     slamWins1 : 4,
-//     slamWins2 : 10,
-//     hard1 : 11,
-//     hard2 : 9,
-//     clay1 : 2,
-//     clay2 : 14,
-//     grass1 : 3,
-//     grass2 : 1,
-//     carpet1 : 0,
-//     carpet2 : 0
-//   },
-//   {
-//     rival1 : "Evert",
-//     rival2 : "Navratilova",
-//     pic1 : "https://static.ffx.io/images/$width_375%2C$height_211/t_crop_fill/q_86%2Cf_auto/7a9a75e493dc409bd771a18328fc692de7186028",
-//     pic2 : "https://ausopen.com/sites/default/files/styles/facebook_share/public/navratilova_gc_h_h.jpg?itok=Zt4HYwAF",
-//     wins1 : 37,
-//     wins2 : 43,
-//     finals1 : 4,
-//     finals2 : 10,
-//     slamWins1 : 8,
-//     slamWins2 : 14,
-//     hard1 : 8,
-//     hard2 : 8,
-//     clay1 : 11,
-//     clay2 : 3,
-//     grass1 : 5,
-//     grass2 : 10,
-//     carpet1 : 13,
-//     carpet2 : 22
-//   },
-// ];
-
 const rivalriesData = [
   [{
     id : 1,
-    name : "Federer"
+    name : "Federer",
+    pic : "https://i.pinimg.com/474x/ab/fb/a4/abfba4b33d34f5523e1c894d94a8b9c4--face-books-god-bless-you.jpg",
+    wins : 16,
+    slamFinals : 3,
+    slamWins : 4,
+    hard : 11,
+    clay : 2,
+    grass : 3,
+    carpet : 0
   },{
     id : 2,
-    name : "Nadal"
+    name : "Nadal",
+    pic : "https://media.nu.nl/m/kwcxto5aocvw_sqr256.jpg/nadal-door-nieuwe-zege-zonder-setverlies-stap-dichter-bij-21e-grand-slam-titel.jpg",
+    wins : 24,
+    slamFinals : 6,
+    slamWins : 10,
+    hard : 9,
+    clay : 14,
+    grass : 1,
+    carpet : 0
   }],
   [{
     id : 3,
-    name : "Evert"
+    name : "Evert",
+    pic : "https://static.ffx.io/images/$width_375%2C$height_211/t_crop_fill/q_86%2Cf_auto/7a9a75e493dc409bd771a18328fc692de7186028",
+    wins : 37,
+    slamFinals : 4,
+    slamWins : 8,
+    hard : 8,
+    clay : 11,
+    grass : 5,
+    carpet : 13
   },{
     id : 4,
-    name : "Navratilova"
+    name : "Navratilova",
+    pic : "https://ausopen.com/sites/default/files/styles/facebook_share/public/navratilova_gc_h_h.jpg?itok=Zt4HYwAF",
+    wins : 43,
+    slamFinals : 10,
+    slamWins : 14,
+    hard : 8,
+    clay : 3,
+    grass : 10,
+    carpet : 22
   }]
 ];
 
-const container = document.getElementById("accordion-container");
+const accordContainer = document.getElementById("accordion-container");
 
-let rows = rivalriesData.length;
-for (let i = 0; i < rows; i++) {
-  let items = rivalriesData[i].length;
-  console.log(i, items);
-  for (let n = 0; n < items; n++) {
-    console.log(rivalriesData[i][n].name);
-    const div = document.createElement("div");
-    div.textContent = `${rivalriesData[i][n].id} ${rivalriesData[i][n].name}`;
-    container.appendChild(div);
+const displayAccordion = function () {
+  if (accordContainer) {
+    let rows = rivalriesData.length;
+    for (let i = 0; i < rows; i++) {
+      let rival = rivalriesData[i].length;
+      const rivalDivHeader = document.createElement("div");
+      rivalDivHeader.classList.add("rival-header");
+
+      const accordHeadLabel = document.createElement("div");
+      accordHeadLabel.classList.add("accord-head-label");
+      accordHeadLabel.innerHTML = "vs";
+
+      const rivalDivBody = document.createElement("div");
+      rivalDivBody.classList.add("rival-body");
+
+      const accordDataLables = document.createElement("div");
+      accordDataLables.classList.add("accord-labels");
+      accordDataLables.innerHTML = `Total Wins<br>
+                                    Slam Finals<br>
+                                    Slam Wins<br>
+                                    Hard Courts<br>
+                                    Clay Courts<br>
+                                    Grass Courts<br>
+                                    Carpet Courts`
+
+      accordContainer.appendChild(rivalDivHeader);
+      accordContainer.appendChild(rivalDivBody);
+      rivalDivBody.appendChild(accordDataLables);
+      rivalDivHeader.appendChild(accordHeadLabel);
+
+      for (let n = 0; n < rival; n++) {
+        const rivalName = document.createElement("div");
+        rivalName.classList.add(`rival${rivalriesData[i][n].id}`);
+
+        const nameR = document.createElement("h2");
+        nameR.classList.add("rival-name");
+        nameR.innerHTML = rivalriesData[i][n].name;
+        const rivalPic = document.createElement("img");
+        rivalPic.src = `${rivalriesData[i][n].pic}`;
+
+        const rivalData = document.createElement("div");
+        rivalData.classList.add(`rival${rivalriesData[i][n].id}`);
+        rivalData.innerHTML =   `${rivalriesData[i][n].wins} <br>
+                                ${rivalriesData[i][n].slamFinals} <br>
+                                ${rivalriesData[i][n].slamWins} <br>
+                                ${rivalriesData[i][n].hard} <br>
+                                ${rivalriesData[i][n].clay} <br>
+                                ${rivalriesData[i][n].grass} <br>
+                                ${rivalriesData[i][n].carpet}`;
+
+        rivalName.appendChild(nameR);
+        rivalName.appendChild(rivalPic);
+        rivalDivHeader.appendChild(rivalName);
+        rivalDivBody.appendChild(rivalData);
+
+        rivalDivHeader.addEventListener("click", function (e) {
+          // rivalDivBody.classList.toggle(".showAccord");
+          rivalDivBody.style.display = "grid";
+        });
+      }
+    }
   }
 };
-// const createAccordion = function (rival) {
-//   const rivalWrapper = document.createElement("div");
-
-//   const rivalHead = document.createElement("h2");
-//   rivalHead.innerHTML = rival.name;
-
-//   rivalWrapper.appendChild(rivalHead);
-
-//   return rivalWrapper;
-// }
-
-// const displayAccordion = function () {
-//   const container = document.getElementById("accordion-container");
-//   if (container) {
-//     for (const rival of rivalriesData) {
-//       const heading = createAccordion(rival);
-//       container.appendChild(heading);
-      // console.log(rivalriesData, heading);
-      // const map = {};
-      // rivalriesData.forEach(rival => {
-      //   rival.forEach(obj => {
-      //     const {id, name} = obj;
-      //     if (map[id]) {
-      //       map[id].push(name);
-      //     } else {
-      //       map[id] = [name]
-      //     }
-      //   })
-      // })
-      // console.log(rival);
-//     }
-//   }
-// };
 
 function init() {
   displayPlayersInit();
   searchInputInit();
   displayQuizQuestions();
-  // displayAccordion();
+  displayAccordion();
 };
 
 window.onload = function () {
