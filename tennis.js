@@ -857,17 +857,6 @@ const displayAccordion = function () {
         rivalName.appendChild(rivalPic);
         rivalDivHeader.appendChild(rivalName);
         rivalDivBody.appendChild(rivalData);
-
-        // rivalDivHeader.addEventListener("click", function (e) {
-        //   console.log(rivalDivHeader);
-        //   if (rivalDivBody.style.display === "none") {
-        //     rivalDivBody.style.display = "grid";
-        //     console.log(rivalDivBody.style.display);
-        //   } else {
-        //     rivalDivBody.style.display = "none";
-        //     console.log(rivalDivBody.style.display);
-        //   }
-        // });
       }
     }
   }

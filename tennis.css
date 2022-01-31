@@ -374,9 +374,10 @@ td {
 }
 
 #accordion-container {
+  width: 80%;
   justify-content: center;
   flex: 1;
-  margin: 40px;
+  margin: 20px auto;
 }
 
 .rival-header {
@@ -394,13 +395,13 @@ td {
   font-size: 5vh;
   display: inline-flex;
   margin: 50px auto;
-  margin-left: 70px;
 }
 
 .rival-header div {
   font-size: 5vh;
   color: #fff;
   margin: 10px;
+  text-align: center;
 }
 
 .accord-head-label {
