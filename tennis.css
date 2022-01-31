@@ -393,7 +393,7 @@ td {
   color: #fff;
   font-size: 5vh;
   display: inline-flex;
-  margin: 50px auto;          /*try get some margin next to left players names*/
+  margin: 50px auto;
   margin-left: 70px;
 }
 
@@ -418,10 +418,6 @@ td {
   border-radius: 10px;
 }
 
-/* .showAccord {
-  display: "grid";
-} */
-
 .rival-body {
   background: #fff;
   border-radius: 0 0 15px 15px;
@@ -436,16 +432,12 @@ td {
   text-align: center;
 }
 
-/* .rival-body div {
-  width: 33.33%;
-} */
-
 .accord-labels {
   grid-area: labels;
   text-align: center;
 }
 
-.rival2, .rival4 {
+.rival2, .rival4, .rival6, .rival8, .rival10, .rival12{
   display: flex;
   justify-content: flex-end;
 }
@@ -542,5 +534,37 @@ td {
   }
   .score {
     font-size: 3vh;
+  }
+}
+@media only screen and (max-width: 1155px) {
+  #accordion-container {
+    margin: 20px;
+  }
+  .rival-header div img {
+    max-width: 120px;
+    min-width: 120px;
+    max-height: 100px;
+    min-height: 100px;
+  }
+  .rival-header {
+    display: inline-grid;
+    grid-template-columns: 2fr 1fr 2fr;
+    width: 100%;
+    justify-items: center;
+  }
+  .rival-name {
+    font-size: 3vh;
+    display: inline-flex;
+    margin: auto;
+    margin-bottom: 1vh;
+  }
+  .rival-header div {
+    font-size: 4vh;
+    display: inline-grid;
+    justify-self: center;
+  }
+  .rival-body {
+    font-size: 3vh;
+    line-height: 1.8;
   }
 }

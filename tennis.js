@@ -698,6 +698,98 @@ const rivalriesData = [
     clay : 3,
     grass : 10,
     carpet : 22
+  }],
+  [{
+    id : 5,
+    name : "Sampras",
+    pic : "https://cdn.britannica.com/85/205585-050-94EFDBDB/Pete-Sampras-men-singles-championship-Wimbledon-sets-1998.jpg",
+    wins : 20,
+    slamFinals : 4,
+    slamWins : 6,
+    hard : 11,
+    clay : 2,
+    grass : 2,
+    carpet : 5
+  },{
+    id : 6,
+    name : "Agassi",
+    pic : "https://d2me2qg8dfiw8u.cloudfront.net/content/uploads/2020/03/26131821/Andre-Agassi-backhand-752x428.jpg",
+    wins : 14,
+    slamFinals : 1,
+    slamWins : 3,
+    hard : 9,
+    clay : 3,
+    grass : 0,
+    carpet : 2
+  }],
+  [{
+    id : 7,
+    name : "S Williams",
+    pic : "https://i.guim.co.uk/img/media/7d6539ca3fb48b9d4854ae1972302328d43c512b/0_149_4455_2673/master/4455.jpg?width=300&quality=85&auto=format&fit=max&s=f3289836d6b4d7c14c14f89335e4460e",
+    wins : 19,
+    slamFinals : 7,
+    slamWins : 11,
+    hard : 12,
+    clay : 2,
+    grass : 4,
+    carpet : 1
+  },{
+    id : 8,
+    name : "V Williams",
+    pic : "https://cdn.tennis.com/uploads/img/2018/10/11/1a94205b752a46149079307c1853e746.jpg",
+    wins : 12,
+    slamFinals : 2,
+    slamWins : 5,
+    hard : 9,
+    clay : 1,
+    grass : 2,
+    carpet : 0
+  }],
+  [{
+    id : 9,
+    name : "McEnroe",
+    pic : "https://fanfan.es/wp-content/uploads/2019/08/mcenroe-tennismash.jpg",
+    wins : 20,
+    slamFinals : 1,
+    slamWins : 6,
+    hard : 6,
+    clay : 1,
+    grass : 3,
+    carpet : 10
+  },{
+    id : 10,
+    name : "Connors",
+    pic : "https://static01.nyt.com/images/2013/06/02/books/review/02connors/02connors-superJumbo.jpg",
+    wins : 14,
+    slamFinals : 1,
+    slamWins : 3,
+    hard : 3,
+    clay : 3,
+    grass : 4,
+    carpet : 4
+  }],
+  [{
+    id : 11,
+    name : "Graf",
+    pic : "https://m.hindustantimes.com/rf/image_size_444x250/HT/p2/2020/06/13/Pictures/steffi-graf-of-germany-plays-a-forehand_443cd2b6-ad5c-11ea-99c1-b8a846b2b30c.jpg",
+    wins : 10,
+    slamFinals : 3,
+    slamWins : 6,
+    hard : 3,
+    clay : 3,
+    grass : 2,
+    carpet : 2
+  },{
+    id : 12,
+    name : "Seles",
+    pic : "https://photoresources.wtatennis.com/photo-resources/2020/03/23/a5220971-730c-44d0-9b16-f3af05c11319/GettyImages-640465599.jpg?width=1176&height=662",
+    wins : 5,
+    slamFinals : 3,
+    slamWins : 4,
+    hard : 2,
+    clay : 3,
+    grass : 0,
+    carpet : 0
   }]
 ];
 
@@ -733,6 +825,14 @@ const displayAccordion = function () {
       rivalDivBody.appendChild(accordDataLables);
       rivalDivHeader.appendChild(accordHeadLabel);
 
+      rivalDivHeader.addEventListener("click", function (e) {
+        if (rivalDivBody.style.display === "grid") {
+          rivalDivBody.style.display = "none";
+        } else {
+          rivalDivBody.style.display = "grid";
+        };
+      });
+
       for (let n = 0; n < rival; n++) {
         const rivalName = document.createElement("div");
         rivalName.classList.add(`rival${rivalriesData[i][n].id}`);
@@ -758,10 +858,16 @@ const displayAccordion = function () {
         rivalDivHeader.appendChild(rivalName);
         rivalDivBody.appendChild(rivalData);
 
-        rivalDivHeader.addEventListener("click", function (e) {
-          // rivalDivBody.classList.toggle(".showAccord");
-          rivalDivBody.style.display = "grid";
-        });
+        // rivalDivHeader.addEventListener("click", function (e) {
+        //   console.log(rivalDivHeader);
+        //   if (rivalDivBody.style.display === "none") {
+        //     rivalDivBody.style.display = "grid";
+        //     console.log(rivalDivBody.style.display);
+        //   } else {
+        //     rivalDivBody.style.display = "none";
+        //     console.log(rivalDivBody.style.display);
+        //   }
+        // });
       }
     }
   }
