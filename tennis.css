@@ -390,6 +390,10 @@ td {
   cursor: pointer;
 }
 
+.rival-header:hover {
+  background: blueviolet;
+}
+
 .rival-name {
   color: #fff;
   font-size: 5vh;
@@ -441,6 +445,38 @@ td {
 .rival2, .rival4, .rival6, .rival8, .rival10, .rival12{
   display: flex;
   justify-content: flex-end;
+}
+
+#records-title {
+  margin: 20px auto;
+  padding: 20px;
+}
+
+#records-container {
+  margin: auto;
+  flex: 1;
+}
+
+.slide-container {
+  /* width: 80%; */
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto 20px auto;
+}
+
+.records-nav {
+  padding: 10px;
+  background: red;
+}
+
+.records-nav a {
+  text-decoration: none;
+  margin: 0 50px;
+  padding: 10px;
+}
+
+.records-nav a:hover {
+  background: blueviolet;
 }
 
 @media only screen and (max-width: 830px) {

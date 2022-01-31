@@ -862,11 +862,21 @@ const displayAccordion = function () {
   }
 };
 
+const displaySlides = function () {
+  let i = 0;
+  const slideImages = [];
+
+  slideImages[0] = "https://img.resized.co/offtheball/eyJkYXRhIjoie1widXJsXCI6XCJodHRwczpcXFwvXFxcL21lZGlhLnJhZGlvY21zLm5ldFxcXC91cGxvYWRzXFxcLzIwMjBcXFwvMDRcXFwvMjQxNTIyMDhcXFwvUEEtNDk5NDAxNjItMTAyNHg2NjQuanBnXCIsXCJ3aWR0aFwiOjk3MCxcImhlaWdodFwiOjQ4NSxcImRlZmF1bHRcIjpcImh0dHBzOlxcXC9cXFwvd3d3Lm9mZnRoZWJhbGwuY29tXFxcL2ltYWdlc1xcXC9uby1pbWFnZS5wbmc_dj0zXCJ9IiwiaGFzaCI6ImE5OGIwMzFhNWFhOGUxYTEyN2NmNzViZTllYmJlZmQ5MzEyOTc2YzcifQ==/australian-open-set-to-start-in-february-next-year-reports.jpg";
+
+  document.slide.src = slideImages[0];
+}
+
 function init() {
   displayPlayersInit();
   searchInputInit();
   displayQuizQuestions();
   displayAccordion();
+  displaySlides();
 };
 
 window.onload = function () {
