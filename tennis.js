@@ -862,14 +862,53 @@ const displayAccordion = function () {
   }
 };
 
+const slides = document.querySelectorAll(".slide-pics");
+const slideImages = [];
+
+slideImages[0] = "https://img.resized.co/offtheball/eyJkYXRhIjoie1widXJsXCI6XCJodHRwczpcXFwvXFxcL21lZGlhLnJhZGlvY21zLm5ldFxcXC91cGxvYWRzXFxcLzIwMjBcXFwvMDRcXFwvMjQxNTIyMDhcXFwvUEEtNDk5NDAxNjItMTAyNHg2NjQuanBnXCIsXCJ3aWR0aFwiOjk3MCxcImhlaWdodFwiOjQ4NSxcImRlZmF1bHRcIjpcImh0dHBzOlxcXC9cXFwvd3d3Lm9mZnRoZWJhbGwuY29tXFxcL2ltYWdlc1xcXC9uby1pbWFnZS5wbmc_dj0zXCJ9IiwiaGFzaCI6ImE5OGIwMzFhNWFhOGUxYTEyN2NmNzViZTllYmJlZmQ5MzEyOTc2YzcifQ==/australian-open-set-to-start-in-february-next-year-reports.jpg";
+slideImages[1] = "https://image-cdn.essentiallysports.com/wp-content/uploads/20200707155616/Infosys-adds-French-Open-to-its-Grand-Slam-portfolio-1.jpg";
+slideImages[2] = "https://www.tennisworldusa.org/imgb/102914/wimbledon-2021-entry-lists-roger-federer-and-serena-williams-present.jpg";
+slideImages[3] = "https://thecomeback.com/wp-content/uploads/2020/03/US-Open-2019.jpg";
+
+const getSlide = function (e) {
+  for (let i = 0; i < slideImages.length; i++) {
+    if (e.target.id == i) {
+      document.slide.src = slideImages[i];
+    }
+  }
+  // const slideID = e.target.id;
+  // for (let i = 0; i < slides; i++) {
+  //   if (slides[i].id === slideID) {
+  //     console.log(slideID);
+    // }
+  // }
+}
+
+slides.forEach(function (slide) {
+  slide.addEventListener("click", getSlide, false);
+})
+
+
 const displaySlides = function () {
-  let i = 0;
-  const slideImages = [];
+  // let i = 0;
+  // const slideImages = [];
 
-  slideImages[0] = "https://img.resized.co/offtheball/eyJkYXRhIjoie1widXJsXCI6XCJodHRwczpcXFwvXFxcL21lZGlhLnJhZGlvY21zLm5ldFxcXC91cGxvYWRzXFxcLzIwMjBcXFwvMDRcXFwvMjQxNTIyMDhcXFwvUEEtNDk5NDAxNjItMTAyNHg2NjQuanBnXCIsXCJ3aWR0aFwiOjk3MCxcImhlaWdodFwiOjQ4NSxcImRlZmF1bHRcIjpcImh0dHBzOlxcXC9cXFwvd3d3Lm9mZnRoZWJhbGwuY29tXFxcL2ltYWdlc1xcXC9uby1pbWFnZS5wbmc_dj0zXCJ9IiwiaGFzaCI6ImE5OGIwMzFhNWFhOGUxYTEyN2NmNzViZTllYmJlZmQ5MzEyOTc2YzcifQ==/australian-open-set-to-start-in-february-next-year-reports.jpg";
+  // slideImages[0] = "https://img.resized.co/offtheball/eyJkYXRhIjoie1widXJsXCI6XCJodHRwczpcXFwvXFxcL21lZGlhLnJhZGlvY21zLm5ldFxcXC91cGxvYWRzXFxcLzIwMjBcXFwvMDRcXFwvMjQxNTIyMDhcXFwvUEEtNDk5NDAxNjItMTAyNHg2NjQuanBnXCIsXCJ3aWR0aFwiOjk3MCxcImhlaWdodFwiOjQ4NSxcImRlZmF1bHRcIjpcImh0dHBzOlxcXC9cXFwvd3d3Lm9mZnRoZWJhbGwuY29tXFxcL2ltYWdlc1xcXC9uby1pbWFnZS5wbmc_dj0zXCJ9IiwiaGFzaCI6ImE5OGIwMzFhNWFhOGUxYTEyN2NmNzViZTllYmJlZmQ5MzEyOTc2YzcifQ==/australian-open-set-to-start-in-february-next-year-reports.jpg";
+  // slideImages[1] = "https://image-cdn.essentiallysports.com/wp-content/uploads/20200707155616/Infosys-adds-French-Open-to-its-Grand-Slam-portfolio-1.jpg";
+  // slideImages[2] = "https://www.tennisworldusa.org/imgb/102914/wimbledon-2021-entry-lists-roger-federer-and-serena-williams-present.jpg";
+  // slideImages[3] = "https://thecomeback.com/wp-content/uploads/2020/03/US-Open-2019.jpg";
 
+  // const getSlide = function (e) {
+  //   const slideID = e.target.id;
+  //   for (i = 0; i < slides; i++) {
+  //     if (slides[i] === slideID) {
+  //       console.log(slideID);
+  //     }
+  //   }
+  // }
   document.slide.src = slideImages[0];
 }
+
 
 function init() {
   displayPlayersInit();
