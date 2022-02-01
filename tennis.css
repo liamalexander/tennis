@@ -490,6 +490,38 @@ td {
   height: 450px;
 }
 
+.slide-overlay {
+  position: absolute;
+  /* bottom: 20%; */
+  top: 75%;
+  color: #fff;
+  /* background: cornflowerblue; */
+  /* opacity: 0.7; */
+  background: rgba(100, 149, 237, 0.7);
+  width: 79%;
+  height: 12%;
+}
+
+.slide-text {
+  /* opacity: 1; */
+  text-align: center;
+  color: #fff;
+}
+
+.records-text-cont {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.records-text {
+  display: flex;
+  width: 100%;
+}
+
+.records-men, .records-women {
+  width: 50%;
+}
+
 .records-text li {
   list-style-type: none;
 }
