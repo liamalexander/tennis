@@ -867,49 +867,49 @@ const recordsData = [
     id : 0,
     tournament : "Australian Open",
     tournPic : "https://img.resized.co/offtheball/eyJkYXRhIjoie1widXJsXCI6XCJodHRwczpcXFwvXFxcL21lZGlhLnJhZGlvY21zLm5ldFxcXC91cGxvYWRzXFxcLzIwMjBcXFwvMDRcXFwvMjQxNTIyMDhcXFwvUEEtNDk5NDAxNjItMTAyNHg2NjQuanBnXCIsXCJ3aWR0aFwiOjk3MCxcImhlaWdodFwiOjQ4NSxcImRlZmF1bHRcIjpcImh0dHBzOlxcXC9cXFwvd3d3Lm9mZnRoZWJhbGwuY29tXFxcL2ltYWdlc1xcXC9uby1pbWFnZS5wbmc_dj0zXCJ9IiwiaGFzaCI6ImE5OGIwMzFhNWFhOGUxYTEyN2NmNzViZTllYmJlZmQ5MzEyOTc2YzcifQ==/australian-open-set-to-start-in-february-next-year-reports.jpg",
-    info : "The Australian Open was first played in 1905",
+    info : "The Australian Open was first played in 1905.  It is currently the first grand slam of the year and since 1988 has been held on outdoor hardcourts at Melbourne Park (previously played on grass courts).",
     mostTitles : ["Djokovic", "Federer", "Agassi", "S Williams", "Seles", "Graf"],
     titleNumbers : [9, 6, 4, 7, 4, 4],
     mostWins : ["Federer", "Djokovic", "Nadal", "S Williams", "Court", "Sharapova"],
     winsNumbers : [102, 82, 76, 88, 60, 57],
-    background : "rgba(99, 197, 218, 0.7)",
-    link : "rgb(99, 197, 218)"
+    background : "rgba(99, 197, 218, 1)",
+    // link : "rgb(99, 197, 218)"
   },
   {
     id : 1,
     tournament : "French Open",
     tournPic : "https://image-cdn.essentiallysports.com/wp-content/uploads/20200707155616/Infosys-adds-French-Open-to-its-Grand-Slam-portfolio-1.jpg",
-    info : "The French Open was first played in 1891",
+    info : "The French Open was first played in 1891.  The second major of the year has been held on clay courts at Stade Roland Garros since 1928 but was originally played on sand at various locations in France.",
     mostTitles : ["Nadal", "Borg", "Wilander / Lendl / Kuerten", "Evert", "Graf", "Henin"],
     titleNumbers : [13, 6, 3, 7, 6, 4],
     mostWins : ["Nadal", "Djokovic", "Federer", "Graf", "Evert", "Sanchez Vicario"],
     winsNumbers : [105, 81, 73, 84, 72, 72],
-    background : "rgba(237, 113, 23, 0.7)",
-    link : "rgb(237, 113, 23)"
+    background : "rgba(237, 113, 23, 1)",
+    // link : "rgb(237, 113, 23)"
   },
   {
     id : 2,
     tournament : "Wimbledon",
     tournPic : "https://www.tennisworldusa.org/imgb/102914/wimbledon-2021-entry-lists-roger-federer-and-serena-williams-present.jpg",
-    info : "Wimbledon was first played in 1877",
+    info : "Wimbledon was first played in 1877.  It is the third major in the calender and the oldest tournament in tennis.  It is currently the only Grand Slam played on grass courts, at the All England Lawn Tennis and Croquet Club since 1922.",
     mostTitles : ["Federer", "Sampras", "Djokovic", "Navratilova", "S Williams", "Graf"],
     titleNumbers : [8, 7, 6, 9, 7, 7],
     mostWins : ["Federer", "Connors", "Djokovic", "Navratilova", "S Williams", "Evert"],
     winsNumbers : [105, 84, 79, 120, 98, 96],
-    background : "rgba(51, 130, 60, 0.6)",
-    link : "rgb(51, 130, 60)"
+    background : "rgb(51, 130, 60)",
+    // link : "rgb(51, 130, 60)"
   },
   {
     id : 3,
     tournament : "US Open",
     tournPic : "https://thecomeback.com/wp-content/uploads/2020/03/US-Open-2019.jpg",
-    info : "The US Open was first played in 1881",
+    info : "The US Open was first played in 1881.  The final Slam of the year has been played at Flushing Meddows on outdoor hardcourts since 1978.  It was previously held on green clay courts (1975 - 1977) and grass courts (until 1974).",
     mostTitles : ["Federer", "Sampras", "Connors", "Evert", "S Williams", "Graf"],
     titleNumbers : [5, 5, 5, 6, 6, 5],
     mostWins : ["Connors", "Federer", "Djokovic", "S Williams", "Evert", "Navratilova"],
     winsNumbers : [98, 89, 81, 106, 101, 89],
-    background : "rgba(122, 73, 136, 0.7)",
-    link : "rgb(122, 73, 136)"
+    background : "rgba(122, 73, 136, 1)",
+    // link : "rgb(122, 73, 136)"
   },
 ];
 
@@ -929,7 +929,7 @@ const getSlide = function (e) {
   for (let i = 0; i < recordsData.length; i++) {
   if (e.target.id == i) {
     document.slide.src = recordsData[i].tournPic;
-    slides[i].style.background = recordsData[i].link;
+    slides[i].style.background = recordsData[i].background;
   }
   }
   for (let n = 0; n < recordsData.length; n++) {
@@ -956,7 +956,7 @@ const displaySlides = function () {
     document.slide.src = recordsData[0].tournPic;
     slideText.textContent = recordsData[0].info;
     overlay.style.background = recordsData[0].background;
-    slides[0].style.background = recordsData[0].link;
+    slides[0].style.background = recordsData[0].background;
     for (let q = 0; q < recordsData[0].titleNumbers.length; q++) {
       recNum[q].textContent = recordsData[0].titleNumbers[q];
       recName[q].textContent = recordsData[0].mostTitles[q];
