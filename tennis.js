@@ -966,6 +966,68 @@ const displaySlides = function () {
   }
 };
 
+const videoData = [
+  {
+    id : 0,
+    tourn : "Australian Open",
+    class : "aus",
+    videos : ["https://www.youtube.com/embed/-kaaXz4IgrA", "https://www.youtube.com/embed/WmKPJtEjJp0"]
+  },
+  {
+    id : 1,
+    tourn : "French Open",
+    class : "fre",
+    videos : ["https://www.youtube.com/embed/-kaaXz4IgrA", "https://www.youtube.com/embed/WmKPJtEjJp0"]
+  },
+  {
+    id : 2,
+    tourn : "Wimbledon",
+    class : "wim",
+    videos : ["https://www.youtube.com/embed/Bk9GAE0QK5E", "https://www.youtube.com/embed/WmKPJtEjJp0"]
+  },
+  {
+    id : 3,
+    tourn : "US Open",
+    class : "uso",
+    videos : ["https://www.youtube.com/embed/-kaaXz4IgrA", "https://www.youtube.com/embed/WmKPJtEjJp0"]
+  },
+];
+
+const vidLinks = document.querySelectorAll(".vids-dropdown");
+const vidContainer = document.getElementById("video-container");
+
+const showVideos = function (e) {
+  if (vidContainer) {
+    for (let i = 0; i < videoData.length; i++) {
+      if (e.target.id == videoData[i].id) {
+        const videoContent = document.createElement("div");
+        videoContent.classList.add("vids");
+        videoContent.textContent = "BOOM";
+        vidContainer.appendChild(videoContent);
+      
+      for (let n = 0; n < videoData[i].videos.length; n++) {
+        console.log(videoData[i].videos[n]);
+
+          const eachVid = document.createElement("div");
+          eachVid.classList.add("video");
+          const vidSrc = document.createElement("iframe");
+          vidSrc.src = videoData[i].videos[n];
+          eachVid.textContent = "BOOM";
+          eachVid.appendChild(vidSrc);
+          videoContent.appendChild(eachVid);
+          // GET THE VIDS BELOW EACH HEADER / LINK
+          // ADD OTHER LINKS TO VIDS ARRAY EXCEPT WIMB MENS
+      }
+      }
+    }
+  }
+}
+
+vidLinks.forEach(link => {
+  link.addEventListener("click", showVideos, false)
+});
+
+
 
 function init() {
   displayPlayersInit();
