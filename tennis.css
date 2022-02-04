@@ -552,7 +552,7 @@ li h4 {
   display: flex;
 }
 
-.name, .number {
+.player-name, .number {
   width: 50%;
 }
 
@@ -595,7 +595,7 @@ li h4 {
 }
 
 .vids {
-  display: flex;
+  display: none;
   width: 100%;
   text-align: center;
 }
@@ -635,7 +635,7 @@ iframe {
     text-align: center;
   }
   h1 {
-    font-size: 5vh;
+    font-size: 4vh;
     margin-top: 5vh;
   }
   #modal-wrapper {
@@ -664,7 +664,7 @@ iframe {
   }
   .modal-data {
     width: 70%;
-    font-size: 3vh;
+    font-size: 2.5vh;
   }
   .modal-pic img {
     width: 100%;
@@ -680,7 +680,7 @@ iframe {
     max-width: 80%;
   }
   .text {
-    font-size: 3vh;
+    font-size: 2.5vh;
     margin-left: 2vw;
     line-height: 25px;
   }
@@ -703,6 +703,9 @@ iframe {
   .score {
     font-size: 3vh;
   }
+  .again-container {
+    margin-bottom: 3vh;
+  }
   #records-container {
     width: 90%;
   }
@@ -716,10 +719,16 @@ iframe {
   .slide-text {
     font-size: 12px;
   }
+  .vids {
+    flex-direction: column;
+  }
+  .video {
+    width: 100%;
+  }
 }
 @media only screen and (max-width: 1155px) {
   #accordion-container {
-    margin: 20px;
+    margin: 20px auto;
   }
   .rival-header div img {
     max-width: 120px;

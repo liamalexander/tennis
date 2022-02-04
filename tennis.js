@@ -483,6 +483,8 @@ function searchInputInit() {
   }
 };
 
+// RESPONSIVE NAV
+
 const responsiveNav = function () {
   const nav = document.querySelector(".topnav");
   nav.classList.add("responsive");
@@ -490,6 +492,8 @@ const responsiveNav = function () {
 
 const navMenu = document.querySelector(".icon");
 navMenu.addEventListener("click", responsiveNav);
+
+// QUIZ
 
 const quizQuestions = [
   {
@@ -651,6 +655,8 @@ const displayQuizQuestions = function () {
 };
 
 // playAgainBtn.addEventListener("click", displayQuizQuestions, false);
+
+// RIVALRIES
 
 const rivalriesData = [
   [{
@@ -862,6 +868,8 @@ const displayAccordion = function () {
   }
 };
 
+// RECORDS
+
 const recordsData = [
   {
     id : 0,
@@ -873,7 +881,6 @@ const recordsData = [
     mostWins : ["Federer", "Djokovic", "Nadal", "S Williams", "Court", "Sharapova"],
     winsNumbers : [102, 82, 76, 88, 60, 57],
     background : "rgba(99, 197, 218, 1)",
-    // link : "rgb(99, 197, 218)"
   },
   {
     id : 1,
@@ -885,7 +892,6 @@ const recordsData = [
     mostWins : ["Nadal", "Djokovic", "Federer", "Graf", "Evert", "Sanchez Vicario"],
     winsNumbers : [105, 81, 73, 84, 72, 72],
     background : "rgba(237, 113, 23, 1)",
-    // link : "rgb(237, 113, 23)"
   },
   {
     id : 2,
@@ -897,19 +903,17 @@ const recordsData = [
     mostWins : ["Federer", "Connors", "Djokovic", "Navratilova", "S Williams", "Evert"],
     winsNumbers : [105, 84, 79, 120, 98, 96],
     background : "rgb(51, 130, 60)",
-    // link : "rgb(51, 130, 60)"
   },
   {
     id : 3,
     tournament : "US Open",
     tournPic : "https://thecomeback.com/wp-content/uploads/2020/03/US-Open-2019.jpg",
-    info : "The US Open was first played in 1881.  The final Slam of the year has been played at Flushing Meddows on outdoor hardcourts since 1978.  It was previously held on green clay courts (1975 - 1977) and grass courts (until 1974).",
+    info : "The US Open was first played in 1881.  The final Slam of the year has been played at Flushing Meddows on outdoor hardcourts since 1978.  It was previously held on green clay (1975 - 1977) and grass courts (until 1974).",
     mostTitles : ["Federer", "Sampras", "Connors", "Evert", "S Williams", "Graf"],
     titleNumbers : [5, 5, 5, 6, 6, 5],
     mostWins : ["Connors", "Federer", "Djokovic", "S Williams", "Evert", "Navratilova"],
     winsNumbers : [98, 89, 81, 106, 101, 89],
     background : "rgba(122, 73, 136, 1)",
-    // link : "rgb(122, 73, 136)"
   },
 ];
 
@@ -966,67 +970,93 @@ const displaySlides = function () {
   }
 };
 
-const videoData = [
-  {
-    id : 0,
-    tourn : "Australian Open",
-    class : "aus",
-    videos : ["https://www.youtube.com/embed/-kaaXz4IgrA", "https://www.youtube.com/embed/WmKPJtEjJp0"]
-  },
-  {
-    id : 1,
-    tourn : "French Open",
-    class : "fre",
-    videos : ["https://www.youtube.com/embed/-kaaXz4IgrA", "https://www.youtube.com/embed/WmKPJtEjJp0"]
-  },
-  {
-    id : 2,
-    tourn : "Wimbledon",
-    class : "wim",
-    videos : ["https://www.youtube.com/embed/Bk9GAE0QK5E", "https://www.youtube.com/embed/WmKPJtEjJp0"]
-  },
-  {
-    id : 3,
-    tourn : "US Open",
-    class : "uso",
-    videos : ["https://www.youtube.com/embed/-kaaXz4IgrA", "https://www.youtube.com/embed/WmKPJtEjJp0"]
-  },
-];
+// VIDEOS
+
+// const videoData = [
+//   {
+//     id : 0,
+//     tourn : "Australian Open",
+//     class : "aus",
+//     videos : ["https://www.youtube.com/embed/-kaaXz4IgrA", "https://www.youtube.com/embed/WmKPJtEjJp0"]
+//   },
+//   {
+//     id : 1,
+//     tourn : "French Open",
+//     class : "fre",
+//     videos : ["https://www.youtube.com/embed/yGvW40l43e0", "https://www.youtube.com/embed/n09eRAzNcf0"]
+//   },
+//   {
+//     id : 2,
+//     tourn : "Wimbledon",
+//     class : "wim",
+//     videos : ["https://www.youtube.com/embed/Bk9GAE0QK5E", "https://www.youtube.com/embed/sJP-LOH1kLM"]
+//   },
+//   {
+//     id : 3,
+//     tourn : "US Open",
+//     class : "uso",
+//     videos : ["https://www.youtube.com/embed/mXIRtAkWI0Y", "https://www.youtube.com/embed/LsCt47r73CI"]
+//   },
+// ];
 
 const vidLinks = document.querySelectorAll(".vids-dropdown");
 const vidContainer = document.getElementById("video-container");
+const videos = document.querySelectorAll(".vids");
 
-const showVideos = function (e) {
-  if (vidContainer) {
-    for (let i = 0; i < videoData.length; i++) {
-      if (e.target.id == videoData[i].id) {
-        const videoContent = document.createElement("div");
-        videoContent.classList.add("vids");
-        videoContent.textContent = "BOOM";
-        vidContainer.appendChild(videoContent);
+// const showVideos = function (e) {
+//   if (vidContainer) {
+    // for (let i = 0; i < vidLinks.length; i++) {
+      // console.log(e.target.id);
+      // console.log(vidLinks[i].id);
+      // console.log(vidLinks.length);
+    // }
+//   }
+// }
+
+// const showVideos = function (e) {
+//   if (vidContainer) {
+//     for (let i = 0; i < videoData.length; i++) {
+//       if (e.target.id == videoData[i].id) {
+//         const videoContent = document.createElement("div");
+//         videoContent.classList.add("vids");
+//         videoContent.textContent = "BOOM";
+//         vidContainer.appendChild(videoContent);
       
-      for (let n = 0; n < videoData[i].videos.length; n++) {
-        console.log(videoData[i].videos[n]);
+//       for (let n = 0; n < videoData[i].videos.length; n++) {
+//         console.log(videoData[i].videos[n]);
+//         console.log(i);
+//         console.log(e.target.id);
 
-          const eachVid = document.createElement("div");
-          eachVid.classList.add("video");
-          const vidSrc = document.createElement("iframe");
-          vidSrc.src = videoData[i].videos[n];
-          eachVid.textContent = "BOOM";
-          eachVid.appendChild(vidSrc);
-          videoContent.appendChild(eachVid);
-          // GET THE VIDS BELOW EACH HEADER / LINK
-          // ADD OTHER LINKS TO VIDS ARRAY EXCEPT WIMB MENS
-      }
-      }
-    }
-  }
-}
+//           const eachVid = document.createElement("div");
+//           eachVid.classList.add("video");
+//           const vidSrc = document.createElement("iframe");
+//           vidSrc.src = videoData[i].videos[n];
+//           eachVid.textContent = "BOOM";
+//           eachVid.appendChild(vidSrc);
+//           videoContent.appendChild(eachVid);
+//           vidLinks[i].appendChild(videoContent);
+//       }
+//       }
+//     }
+//   }
+// }
+
 
 vidLinks.forEach(link => {
-  link.addEventListener("click", showVideos, false)
+  link.addEventListener("click", function (e) {
+    if (vidContainer) {
+      for (let i = 0; i < videos.length; i++) {
+        if (link.id == videos[i].id) {
+          if (videos[i].style.display === "flex") {
+            videos[i].style.display = "none";
+          } else {
+            videos[i].style.display = "flex";
+          }
+        }
+      }
+    }
+  }, false)
 });
-
 
 
 function init() {
