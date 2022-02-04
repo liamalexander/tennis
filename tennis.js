@@ -1070,3 +1070,29 @@ function init() {
 window.onload = function () {
   init();
 };
+
+      //CHECKLIST FOR ALLY CAT
+// check home page: -
+//   modal opens and closes
+//   search bar works for name and nationality
+//   responsive on big and small 
+//   footer
+
+// quiz:-
+//   all works and responsive big and small 
+//   footer 
+
+// videos:- 
+//   works on click with correct videos
+//   responsive 
+//   footer 
+
+// rivalries:- 
+//   opens and closes with correct data for each rivalry on click 
+//   responsive big and small 
+//   footer
+
+// records:-
+//   tabs work and display correct data below and img 
+//   responsive big and small 
+//   footer 
