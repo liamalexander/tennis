@@ -1,36 +1,112 @@
 <!doctype html>
 
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
 
-  <title>Demo1</title>
+  <title>Tennis' Grand Slam Champions</title>
   <meta name="description" content="Tennis' Grand Slam Champions">
 
-  <!-- <link rel="stylesheet" href="/frontend/res/css/normalise.css" -->
-  <link rel="stylesheet" href="/res/css/normalise.css">
-  <!-- <link rel="stylesheet" href="/frontend/new-tennis/tennis.css"> -->
-  <link rel="stylesheet" href="/new-tennis\tennis.css">
+  <link rel="stylesheet" href="/tennis.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
+
 <body>
-    <header>
-        <div>
-            <nav>
-                <!-- <a href="/frontend/new-tennis/tennis.html">Home</a>
-                <a href="/frontend/new-tennis/tennis-quiz.html">Quiz</a>
-                <a href="/frontend/new-tennis/tennis-videos.html">Videos</a>
-                <a href="/frontend/new-tennis/tennis-rivalries.html">Rivalries</a>
-                <a href="/frontend/new-tennis/tennis-records.html">Records</a> -->
-                <a href="/new-tennis/tennis.html">Home</a>
-                <a href="/new-tennis/tennis-quiz.html">Quiz</a>
-                <a href="/new-tennis/tennis-videos.html">Videos</a>
-                <a href="/new-tennis/tennis-rivalries.html">Rivalries</a>
-                <a href="/new-tennis/tennis-records.html">Records</a>
-            </nav>
+  <header>
+    <div>
+        <nav class="topnav">
+            <a href="/tennis.html">Home</a>
+            <a href="/tennis-quiz.html">Quiz</a>
+            <a href="/tennis-videos.html">Videos</a>
+            <a href="/tennis-rivalries.html">Rivalries</a>
+            <a href="/tennis-records.html">Records</a>
+            <a href="javascript:void(0);" class="icon">
+                <i class="fa fa-bars"></i>
+              </a>
+        </nav>
+    </div>
+  </header>
+  <h2 id="video-title">Grand Slam Videos</h2>
+  <div id="video-container">
+      <div class="videos-div">
+          <div class="vids-dropdown aus" id="0">
+              <h3 class="vids-text">Australian Open</h3>
+          </div>
+          <div class="vids" id="0">
+            <div class="video">
+                <iframe src="https://www.youtube.com/embed/-kaaXz4IgrA">
+                </iframe>
+            </div>
+            <div class="video">
+                <iframe src="https://www.youtube.com/embed/WmKPJtEjJp0">
+                </iframe>
+            </div>
+          </div>
+      </div>
+      <div class="videos-div">
+        <div class="vids-dropdown fre" id="1">
+            <h3 class="vids-text">French Open</h3>
         </div>
-    </header>
-    <div class="container">
+        <div class="vids" id="1">
+          <div class="video">
+              <iframe src="https://www.youtube.com/embed/yGvW40l43e0">
+              </iframe>
+          </div>
+          <div class="video">
+              <iframe src="https://www.youtube.com/embed/n09eRAzNcf0">
+              </iframe>
+          </div>
+        </div>
+    </div>
+    <div class="videos-div">
+        <div class="vids-dropdown wim" id="2">
+            <h3 class="vids-text">Wimbledon</h3>
+        </div>
+        <div class="vids" id="2">
+          <div class="video">
+              <iframe src="https://www.youtube.com/embed/Bk9GAE0QK5E">
+              </iframe>
+          </div>
+          <div class="video">
+              <iframe src="https://www.youtube.com/embed/sJP-LOH1kLM">
+              </iframe>
+          </div>
+        </div>
+    </div>
+    <div class="videos-div">
+        <div class="vids-dropdown uso" id="3">
+            <h3 class="vids-text">US Open</h3>
+        </div>
+        <div class="vids" id="3">
+          <div class="video">
+              <iframe src="https://www.youtube.com/embed/mXIRtAkWI0Y">
+              </iframe>
+          </div>
+          <div class="video">
+              <iframe src="https://www.youtube.com/embed/LsCt47r73CI">
+              </iframe>
+          </div>
+        </div>
+    </div>
+  </div>
+    
+    <div class="footer">
+        <a href="https://www.facebook.com/bbcnews/" target="_blank" class="social-icon">
+          <i class="fa fa-facebook"></i>
+        </a>
+        <a href="https://twitter.com/bbcnews?lang=en" target="_blank" class="social-icon">
+          <i class="fa fa-twitter"></i>
+        </a>
+        <p>Copyright Liam's Tennis Database 2022</p>
+      </div>
+
+    <script src="/tennis.js"></script>
+    
+</body>
+</html>
+
+<!-- <div class="container">
     <div class="clearfix">
         <div class="dropdown">
             <button onclick="myFunction()" class="dropbtn"><h1>Australian Open Matches</h1></button>
@@ -130,53 +206,6 @@
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
             allowfullscreen></iframe>
         </div>
-            </div>
-        </div>
-        <div class="dropdown">
-            <button onclick="myFunction4()" class="dropbtn4"><h1>Other ATP Tour Matches</h1></button>
-            <div id="myDropdown4" class="dropdown-content4">
-        <div class="box">
-            <iframe width="420" height="345" src="https://www.youtube.com/embed/Xxb4MIsBBsg" frameborder="0" 
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-            allowfullscreen></iframe>
-        </div>
-        <div class="box">
-            <iframe width="420" height="345" src="https://www.youtube.com/embed/aFqkwjqv6-0" frameborder="0" 
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-            allowfullscreen></iframe>
-        </div>
-            </div>
-        </div>
-        <div class="dropdown">
-            <button onclick="myFunction5()" class="dropbtn5"><h1>Other WTA Matches</h1></button>
-            <div id="myDropdown5" class="dropdown-content5">
-        <div class="box">
-            <iframe width="420" height="345" src="https://www.youtube.com/embed/Xxb4MIsBBsg" frameborder="0" 
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-            allowfullscreen></iframe>
-        </div>
-        <div class="box">
-            <iframe width="420" height="345" src="https://www.youtube.com/embed/aFqkwjqv6-0" frameborder="0" 
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-            allowfullscreen></iframe>
-        </div>
-            </div>
         </div>
     </div>
-    </div>
-    
-    <div class="footer">
-        <a href="https://www.facebook.com/bbcnews/" target="_blank" class="social-icon">
-          <i class="fa fa-facebook"></i>
-        </a>
-        <a href="https://twitter.com/bbcnews?lang=en" target="_blank" class="social-icon">
-          <i class="fa fa-twitter"></i>
-        </a>
-        <p>Copyright Liam's Tennis Database 2020</p>
-      </div>
-    
-    <!-- <script src="/frontend/new-tennis/tennis.js"></script> -->
-    <script src="/new-tennis/tennis.js"></script>
-    
-</body>
-</html>
+    </div> -->

@@ -1,71 +1,108 @@
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <!-- <link rel="stylesheet" href="/frontend/res/css/normalise.css"> -->
-    <link rel="stylesheet" href="/res/css/normalise.css">
-    <!-- <link rel="stylesheet" href="/frontend/new-tennis/tennis.css"> -->
-    <link rel="stylesheet" href="/new-tennis\tennis.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-</head>
-<body>
-    <header>
-        <div>
-            <nav>
-                <!-- <a href="/frontend/new-tennis/tennis.html">Home</a>
-                <a href="/frontend/new-tennis/tennis-quiz.html">Quiz</a>
-                <a href="/frontend/new-tennis/tennis-videos.html">Videos</a>
-                <a href="/frontend/new-tennis/tennis-rivalries.html">Rivalries</a>
-                <a href="/frontend/new-tennis/tennis-records.html">Records</a> -->
-                <a href="/new-tennis/tennis.html">Home</a>
-                <a href="/new-tennis/tennis-quiz.html">Quiz</a>
-                <a href="/new-tennis/tennis-videos.html">Videos</a>
-                <a href="/new-tennis/tennis-rivalries.html">Rivalries</a>
-                <a href="/new-tennis/tennis-records.html">Records</a>
-        </div>
-    </header>
+<!doctype html>
 
-    <div class="tabContainer">
-        <div class="buttonContainer">
-            <button onclick="showPanel(0, '#03befc')">Australian Open</button>
-            <button onclick="showPanel(1, '#fc4a03')">French Open</button>
-            <button onclick="showPanel(2, '#59a318')">Wimbledon</button>
-            <button onclick="showPanel(3, '#633fe8')">US Open</button>
-        </div>
-        <div class="tabPanel">
-            <img src="https://img.resized.co/offtheball/eyJkYXRhIjoie1widXJsXCI6XCJodHRwczpcXFwvXFxcL21lZGlhLnJhZGlvY21zLm5ldFxcXC91cGxvYWRzXFxcLzIwMjBcXFwvMDRcXFwvMjQxNTIyMDhcXFwvUEEtNDk5NDAxNjItMTAyNHg2NjQuanBnXCIsXCJ3aWR0aFwiOjk3MCxcImhlaWdodFwiOjQ4NSxcImRlZmF1bHRcIjpcImh0dHBzOlxcXC9cXFwvd3d3Lm9mZnRoZWJhbGwuY29tXFxcL2ltYWdlc1xcXC9uby1pbWFnZS5wbmc_dj0zXCJ9IiwiaGFzaCI6ImE5OGIwMzFhNWFhOGUxYTEyN2NmNzViZTllYmJlZmQ5MzEyOTc2YzcifQ==/australian-open-set-to-start-in-february-next-year-reports.jpg"
-             alt="Australian Open">
-             <div class="tabContent">
-                <h2>The Australian Open</h2>
-                <p>First played in 1888</p>
-            </div>
-        </div>
-        <div class="tabPanel">
-            <img src="https://image-cdn.essentiallysports.com/wp-content/uploads/20200707155616/Infosys-adds-French-Open-to-its-Grand-Slam-portfolio-1.jpg"
-            alt="French Open">
-            <div class="tabContent" id="frenchTab">
-                <h2>The French Open</h2>
-                <p>First played in 1878</p>
-            </div>
-        </div>
-        <div class="tabPanel">
-            <img src="https://theclearing.co.uk/wp-content/uploads/2019/08/Wimbledon_Interim_Case_Study_3000x1688-01.png"
-            alt="Wimbledon">
-            <div class="tabContent" id="wimbTab">
-                <h2>Wimbledon</h2>
-                <p>First played in 1868</p>
-            </div>
-        </div>
-        <div class="tabPanel">
-            <img src="https://thecomeback.com/wp-content/uploads/2020/03/US-Open-2019.jpg"
-            alt="US Open">
-            <div class="tabContent" id="usTab">
-                <h2>The US Open</h2>
-                <p>First played in 1878</p>
-            </div>
-        </div>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+
+  <title>Tennis' Grand Slam Champions</title>
+  <meta name="description" content="Tennis' Grand Slam Champions">
+
+  <link rel="stylesheet" href="/tennis.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+  <header>
+    <div>
+      <nav class="topnav">
+        <a href="/tennis.html">Home</a>
+        <a href="/tennis-quiz.html">Quiz</a>
+        <a href="/tennis-videos.html">Videos</a>
+        <a href="/tennis-rivalries.html">Rivalries</a>
+        <a href="/tennis-records.html">Records</a>
+        <a href="javascript:void(0);" class="icon">
+          <i class="fa fa-bars"></i>
+        </a>
+      </nav>
     </div>
+  </header>
+  <h2 id="records-title">Grand Slam Records</h2>
+
+  <div id="records-container">
+    <div class="slide-container">
+      <span class="records-nav">
+        <a href="#" class="slide-pics aus-hov" id="0">Australian Open</a>
+        <a href="#" class="slide-pics fre-hov" id="1">French Open</a>
+        <a href="#" class="slide-pics wim-hov" id="2">Wimbledon</a>
+        <a href="#" class="slide-pics uso-hov" id="3">US Open</a>
+      </span>
+      <img name="slide" class="records-slides">
+      <div class="slide-overlay">
+        <h4 class="slide-text">Australian Open</h4>
+      </div>
+    </div>
+    <div class="records-text-cont">
+      <h3 class="records-title">Most Titles</h3>
+      <div class="men-women-title">
+        <h4>Men</h4>
+        <h4>Women</h4>
+      </div>
+      <div class="records-text">
+        <div class="records-men">
+          <div class="player-name">
+            <li class="records-data">Djokovic</li>
+            <li class="records-data">Federer</li>
+            <li class="records-data">Agassi</li>
+          </div>
+          <div class="number">
+            <li class="records-number">9</li>
+            <li class="records-number">6</li>
+            <li class="records-number">4</li>
+          </div>
+        </div>
+        <div class="records-women">
+          <div class="player-name">
+            <li class="records-data">S Williams</li>
+            <li class="records-data">Seles</li>
+            <li class="records-data">Graf</li>
+          </div>
+          <div class="number">
+            <li class="records-number">7</li>
+            <li class="records-number">4</li>
+            <li class="records-number">4</li>
+          </div>
+        </div>
+      </div>
+      <h3 class="records-title">Most Wins</h3>
+      <div class="records-text">
+        <div class="records-men">
+          <div class="player-name">
+            <li class="records-data wins">Djokovic</li>
+            <li class="records-data wins">Federer</li>
+            <li class="records-data wins">Agassi</li>
+          </div>
+          <div class="number">
+            <li class="records-number num">9</li>
+            <li class="records-number num">6</li>
+            <li class="records-number num">4</li>
+          </div>
+        </div>
+        <div class="records-women">
+          <div class="player-name">
+            <li class="records-data wins">S Williams</li>
+            <li class="records-data wins">Seles</li>
+            <li class="records-data wins">Graf</li>
+          </div>
+          <div class="number">
+            <li class="records-number num">7</li>
+            <li class="records-number num">4</li>
+            <li class="records-number num">4</li>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
     <div class="footer">
         <a href="https://www.facebook.com/bbcnews/" target="_blank" class="social-icon">
@@ -74,11 +111,10 @@
         <a href="https://twitter.com/bbcnews?lang=en" target="_blank" class="social-icon">
           <i class="fa fa-twitter"></i>
         </a>
-        <p>Copyright Liam's Tennis Database 2020</p>
+        <p>Copyright Liam's Tennis Database 2022</p>
       </div>
-    
-    <!-- <script src="/frontend/new-tennis/tennis.js"></script> -->
-    <script src="/new-tennis/tennis.js"></script>
+
+    <script src="/tennis.js"></script>
 
 </body>
 </html>
