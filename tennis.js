@@ -1083,6 +1083,7 @@ window.onload = function () {
 //   footer 
 
 // videos:- 
+//   ERROR MSG IN CONSOLE FOR PERMISSIONS??
 //   works on click with correct videos
 //   responsive 
 //   footer 
