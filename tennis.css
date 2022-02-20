@@ -8,9 +8,12 @@ body {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
+  margin: 0;
 }
 
-/*comment*/
+header {
+  margin-bottom: 20px;
+}
 
 header div {
   height:100%;
@@ -97,10 +100,12 @@ h1 {
   display: grid;
   grid-template-columns: 1fr 2fr;
   grid-template-rows: 1fr 1fr 1fr;
+  box-shadow: 0 0 4px 4px rgb(0 0 0 / 35%);
 }
 
 #playerList div:hover {
   background: blueviolet;
+  transform: scale(1.04);
 }
 
 #playerList div h2 {
@@ -186,6 +191,9 @@ h1 {
   border: none;
   font-weight: bolder;
   cursor: pointer;
+  padding: 6px 10px;
+  border-radius: 5px;
+  text-transform: uppercase;
 }
 
 .modal-body {
@@ -255,6 +263,7 @@ h1 {
   background: #fff;
   justify-content: center;
   border-radius: 0 0 5px 5px;
+  padding: 5px;
 }
 
 .table {
@@ -654,6 +663,7 @@ iframe {
   }
   .modal-close {
     right: 5%;
+    padding: 2px 5px;
   }
   .modal-text {
     width: 100%;
